@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import "./tree.css"
-import defaultData from "../assets/json/works_vedanta_desika.json"
+import defaultData from "../assets/json/works_of_ramanuja.json"
 
 export default function Tree() {
   const svgRef = useRef(null)
@@ -22,9 +22,9 @@ export default function Tree() {
   // },[])
 
   useEffect(() => {
-    const margin = { top: 10, right: 10, bottom: 10, left: 150 }
-    const width = 1000 - margin.left - margin.right
-    const height = 700 - margin.bottom
+    const margin = { top: 10, right: 10, bottom: 10, left: 200 }
+    const width = 800 - margin.left - margin.right
+    const height = 600 - margin.bottom
 
     d3.select("#tree").select("svg").remove()
 
@@ -77,7 +77,7 @@ export default function Tree() {
         .append("circle")
         .attr("class", "node")
         .attr("r", 1e-6)
-        .style("fill", (d) => (d._children ? "#F9856F" : "#ffb19b "))
+        .style("fill", (d) => (d._children ? "#9c2818" : "#aa50bf"))
         .attr("cursor", "pointer")
 
       nodeEnter
@@ -93,6 +93,7 @@ export default function Tree() {
           d.children || d._children ? "end" : "start"
         )
         .text((d) => d.data.name)
+        .attr("fill", "#ffffff") // Set the text color here
 
       const nodeUpdate = nodeEnter.merge(node)
 
@@ -104,7 +105,7 @@ export default function Tree() {
       nodeUpdate
         .select("circle.node")
         .attr("r", 10)
-        .style("fill", (d) => (d._children ? "#F9856F" : "#ffb19b"))
+        .style("fill", (d) => (d._children ? "#9c2818" : "#aa50bf"))
         .attr("cursor", "pointer")
 
       const nodeExit = node

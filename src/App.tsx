@@ -1,12 +1,12 @@
-import BackgroundLayer from "./components/BackgroundLayer"
-import Header from "./components/Header"
-import BaseLayout from "./layouts/BaseLayout"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import HomePage from "./pages/HomePage"
 
 export default function App() {
   return (
-    <BaseLayout>
-      <Header />
-      <BackgroundLayer />
-    </BaseLayout>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

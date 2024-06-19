@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react"
-import bgImage from "../assets/background.png"
+import bgImage from "../assets/images/background.png"
 
 interface BaseLayoutProps {
   children?: React.ReactNode
