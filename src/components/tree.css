@@ -14,3 +14,9 @@
   stroke: #aa50bf;
   stroke-width: 2px;
 }
+
+#tree {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}

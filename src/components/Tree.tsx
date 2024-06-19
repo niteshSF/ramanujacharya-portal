@@ -11,16 +11,6 @@ export default function Tree() {
 
   const [data, setData] = useState(defaultData)
 
-  // const handleFetchData = async () => {
-  //   const response = await fetch("http://127.0.0.1:8000/v1/nodes/2")
-  //   const data1 = await response.json()
-  //   setData(data1)
-  // }
-
-  // useEffect(() => {
-  //   handleFetchData()
-  // },[])
-
   useEffect(() => {
     const margin = { top: 10, right: 10, bottom: 10, left: 200 }
     const width = 800 - margin.left - margin.right
@@ -77,7 +67,7 @@ export default function Tree() {
         .append("circle")
         .attr("class", "node")
         .attr("r", 1e-6)
-        .style("fill", (d) => (d._children ? "#9c2818" : "#aa50bf"))
+        .style("fill", (d) => (d._children ? "#9A20A5" : "#aa50bf"))
         .attr("cursor", "pointer")
 
       nodeEnter
@@ -105,7 +95,7 @@ export default function Tree() {
       nodeUpdate
         .select("circle.node")
         .attr("r", 10)
-        .style("fill", (d) => (d._children ? "#9c2818" : "#aa50bf"))
+        .style("fill", (d) => (d._children ? "#9A20A5" : "#aa50bf"))
         .attr("cursor", "pointer")
 
       const nodeExit = node
