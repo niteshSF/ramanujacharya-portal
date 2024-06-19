@@ -1,0 +1,18 @@
+h2 {
+  color: #ffff00;
+  margin-top: 30px;
+}
+
+blockquote {
+  background-color: #ffffff;
+  border-left: 5px solid #ffff00;
+  padding: 10px;
+}
+
+blockquote p {
+  color: #f30908;
+}
+
+p {
+  color: #ffffff;
+}
