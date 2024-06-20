@@ -3,6 +3,7 @@ import axios from "axios"
 import ReactMarkdown from "react-markdown"
 import rehypeRaw from "rehype-raw"
 import "./markdown.css"
+import { Box } from "@chakra-ui/react"
 
 const MarkdownViewer = ({ url }: { url: string }) => {
   const [markdown, setMarkdown] = useState("")
@@ -20,7 +21,11 @@ const MarkdownViewer = ({ url }: { url: string }) => {
     fetchMarkdown()
   }, [url])
 
-  return <ReactMarkdown rehypePlugins={[rehypeRaw]} children={markdown} />
+  return (
+    <Box textAlign={"center"}>
+      <ReactMarkdown rehypePlugins={[rehypeRaw]} children={markdown} />
+    </Box>
+  )
 }
 
 export default MarkdownViewer

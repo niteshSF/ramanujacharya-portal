@@ -13,6 +13,11 @@ blockquote p {
   color: #f30908;
 }
 
+blockquote h1 {
+  color: #f30908;
+}
+
 p {
   color: #ffffff;
+  text-align: center;
 }

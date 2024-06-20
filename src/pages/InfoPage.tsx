@@ -14,7 +14,7 @@ export default function InfoPage() {
   return (
     <BaseLayout>
       <Header />
-      <Flex mt="20px" mx="40px" gap="50px">
+      <Flex mt="20px" mx="40px" gap="50px" justifyContent={"space-between"}>
         <Box>
           <MarkdownViewer url={url || ""} />
         </Box>
