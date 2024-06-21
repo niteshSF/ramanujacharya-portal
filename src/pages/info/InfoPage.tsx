@@ -8,6 +8,23 @@ import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { FaList } from "react-icons/fa"
 import TableOfContents from "../../components/TableOfContents"
+import { marked } from "marked"
+
+const generateTOC = (htmlContent: string) => {
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(htmlContent, "text/html")
+  const headings = doc.querySelectorAll("h1, h2, h3, h4, h5, h6")
+
+  const toc = Array.from(headings).map((heading) => {
+    const level = parseInt(heading.tagName[1], 10)
+    const text = heading.textContent
+    const id = text?.replace(/\s+/g, "-").toLowerCase() || ""
+    heading.id = id // Set the ID on the heading
+    return { level, text, id }
+  })
+
+  return { toc, updatedHtmlContent: doc.body.innerHTML }
+}
 
 export default function InfoPage() {
   const { infoSlug } = useParams()
@@ -15,6 +32,8 @@ export default function InfoPage() {
   const url = urls.find((url) => url.name === infoSlug)?.url
 
   const [markdown, setMarkdown] = useState("")
+  const [toc, setToc] = useState([])
+  const [htmlContent, setHtmlContent] = useState("")
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
@@ -32,6 +51,16 @@ export default function InfoPage() {
     fetchMarkdown()
   }, [url])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const htmlContent = await marked(markdown)
+      const { toc, updatedHtmlContent } = generateTOC(htmlContent)
+      setToc(toc)
+      setHtmlContent(updatedHtmlContent)
+    }
+    fetchData()
+  }, [markdown])
+
   return (
     <BaseLayout>
       <Header />
@@ -45,9 +74,14 @@ export default function InfoPage() {
         />
       </Box>
       <Box textAlign={"center"} w="90%" mt="60px" p="4" mx="auto">
-        <MarkdownViewer markdown={markdown} />
+        <MarkdownViewer htmlContent={htmlContent} />
       </Box>
-      <TableOfContents isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
+      <TableOfContents
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+        toc={toc}
+      />
     </BaseLayout>
   )
 }
