@@ -1,14 +1,36 @@
-import { Heading } from "@chakra-ui/react"
+import {
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+} from "@chakra-ui/react"
 
-export default function TableOfContents() {
+export default function TableOfContents({
+  isOpen,
+  onClose,
+  btnRef,
+}: {
+  isOpen: boolean
+  onClose: () => void
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  btnRef: any
+}) {
   return (
-    <Heading
-      color="white"
-      fontWeight="bold"
-      size="2xl"
-      style={{ textWrap: "nowrap" }}
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      finalFocusRef={btnRef}
     >
-      Table Of Contents
-    </Heading>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerHeader textAlign={"center"}>Table of Contents</DrawerHeader>
+
+        <DrawerBody></DrawerBody>
+      </DrawerContent>
+    </Drawer>
   )
 }

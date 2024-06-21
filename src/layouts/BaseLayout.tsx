@@ -7,13 +7,7 @@ interface BaseLayoutProps {
 
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <Box
-      bgImage={bgImage}
-      minW={"100vw"}
-      minH={"100vh"}
-      bgSize={"cover"}
-      bgPos={"center"}
-    >
+    <Box bgImage={bgImage} bgSize={"cover"} bgPos={"center"} minH="100vh">
       {children}
     </Box>
   )

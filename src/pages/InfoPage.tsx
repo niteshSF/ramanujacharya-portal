@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout"
 import MarkdownViewer from "../components/MarkdownViewer"
 import urls from "../assets/json/urls.json"
 import { useParams } from "react-router-dom"
-import { Box, Flex } from "@chakra-ui/react"
+import { Box, IconButton, useDisclosure } from "@chakra-ui/react"
+import { useEffect, useRef, useState } from "react"
+import axios from "axios"
+import { FaList } from "react-icons/fa"
 import TableOfContents from "../components/TableOfContents"
 
 export default function InfoPage() {
@@ -11,17 +14,38 @@ export default function InfoPage() {
 
   const url = urls.find((url) => url.name === infoSlug)?.url
 
+  const [markdown, setMarkdown] = useState("")
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = useRef()
+
+  useEffect(() => {
+    const fetchMarkdown = async () => {
+      try {
+        const response = await axios.get(url || "")
+        setMarkdown(response.data)
+      } catch (error) {
+        console.error("Error fetching markdown:", error)
+      }
+    }
+
+    fetchMarkdown()
+  }, [url])
+
   return (
     <BaseLayout>
       <Header />
-      <Flex mt="20px" mx="40px" gap="50px" justifyContent={"space-between"}>
-        <Box>
-          <MarkdownViewer url={url || ""} />
-        </Box>
-        <Box>
-          <TableOfContents />
-        </Box>
-      </Flex>
+      <Box textAlign={"right"} mr="20px">
+        <IconButton
+          aria-label="Table of Contents"
+          icon={<FaList />}
+          onClick={onOpen}
+        />
+      </Box>
+      <Box textAlign={"center"} w="90%" mt="20px" p="4" mx="auto">
+        <MarkdownViewer markdown={markdown} />
+      </Box>
+      <TableOfContents isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
     </BaseLayout>
   )
 }
