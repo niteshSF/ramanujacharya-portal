@@ -1,13 +1,13 @@
-import Header from "../components/Header"
-import BaseLayout from "../layouts/BaseLayout"
-import MarkdownViewer from "../components/MarkdownViewer"
-import urls from "../assets/json/urls.json"
+import Header from "../../components/Header"
+import BaseLayout from "../../layouts/BaseLayout"
+import MarkdownViewer from "../../components/MarkdownViewer"
+import urls from "../../assets/json/urls.json"
 import { useParams } from "react-router-dom"
 import { Box, IconButton, useDisclosure } from "@chakra-ui/react"
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { FaList } from "react-icons/fa"
-import TableOfContents from "../components/TableOfContents"
+import TableOfContents from "../../components/TableOfContents"
 
 export default function InfoPage() {
   const { infoSlug } = useParams()
@@ -35,14 +35,16 @@ export default function InfoPage() {
   return (
     <BaseLayout>
       <Header />
-      <Box textAlign={"right"} mr="20px">
+      <Box textAlign={"right"} position="fixed" right="16px" py="4">
         <IconButton
           aria-label="Table of Contents"
+          title="Table of Contents"
           icon={<FaList />}
           onClick={onOpen}
+          color="#9a0019"
         />
       </Box>
-      <Box textAlign={"center"} w="90%" mt="20px" p="4" mx="auto">
+      <Box textAlign={"center"} w="90%" mt="60px" p="4" mx="auto">
         <MarkdownViewer markdown={markdown} />
       </Box>
       <TableOfContents isOpen={isOpen} onClose={onClose} btnRef={btnRef} />

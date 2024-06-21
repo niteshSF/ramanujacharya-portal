@@ -6,6 +6,7 @@ export default function BackgroundLayer() {
     <Box>
       <Image
         src={RamaunjaImg}
+        display={{ base: "none", lg: "block" }}
         alt="Ramanujacharya"
         position="absolute"
         right="0"
