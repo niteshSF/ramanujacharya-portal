@@ -1,21 +1,14 @@
-import Header from "../../components/Header"
+import Header from "../../components/Header/Header"
 import BaseLayout from "../../layouts/BaseLayout"
-import MarkdownViewer from "../../components/MarkdownViewer"
+import MarkdownViewer from "../../components/MarkdownViewer/MarkdownViewer"
 import urls from "../../assets/json/urls.json"
 import { useParams } from "react-router-dom"
 import { Box, IconButton, useDisclosure } from "@chakra-ui/react"
-import { RefObject, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { FaList } from "react-icons/fa"
-import TableOfContents from "../../components/TableOfContents"
+import TableOfContents from "../../components/TableOfContents/TableOfContents"
 import { marked } from "marked"
-
-// Define a type for the Table of Contents items
-interface TOCItem {
-  level: number
-  text: string | null
-  id: string
-}
 
 const generateTOC = (
   htmlContent: string
@@ -88,7 +81,7 @@ export default function InfoPage() {
       <TableOfContents
         isOpen={isOpen}
         onClose={onClose}
-        btnRef={btnRef as RefObject<HTMLButtonElement>}
+        btnRef={btnRef}
         toc={toc}
       />
     </BaseLayout>

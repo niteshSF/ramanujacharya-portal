@@ -8,20 +8,13 @@ import {
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react"
-import { RefObject } from "react"
 import "./toc.css"
-
-interface TOCItem {
-  level: number
-  text: string
-  id: string
-}
 
 interface TableOfContentsProps {
   isOpen: boolean
   onClose: () => void
-  btnRef: RefObject<HTMLButtonElement>
-  toc: TOCItem[]
+  btnRef: any
+  toc: TOCItem[] // Table of Contents items
 }
 
 export default function TableOfContents({

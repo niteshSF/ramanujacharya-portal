@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import "./tree.css"
-import defaultData from "../assets/json/works_of_ramanuja.json"
+import defaultData from "../../assets/json/works_of_ramanuja.json"
 
 export default function Tree() {
   const svgRef = useRef(null)
