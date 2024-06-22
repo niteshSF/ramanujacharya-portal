@@ -8,21 +8,28 @@ import {
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react"
-
+import { RefObject } from "react"
 import "./toc.css"
+
+interface TOCItem {
+  level: number
+  text: string
+  id: string
+}
+
+interface TableOfContentsProps {
+  isOpen: boolean
+  onClose: () => void
+  btnRef: RefObject<HTMLButtonElement>
+  toc: TOCItem[]
+}
 
 export default function TableOfContents({
   isOpen,
   onClose,
   btnRef,
   toc,
-}: {
-  isOpen: boolean
-  onClose: () => void
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  btnRef: any
-  toc: { level: number; text: string; id: string }[]
-}) {
+}: TableOfContentsProps) {
   return (
     <Drawer
       isOpen={isOpen}
@@ -33,8 +40,7 @@ export default function TableOfContents({
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader textAlign={"center"}>Table of Contents</DrawerHeader>
-
+        <DrawerHeader textAlign="center">Table of Contents</DrawerHeader>
         <DrawerBody>
           {toc.map((item, index) => (
             <UnorderedList

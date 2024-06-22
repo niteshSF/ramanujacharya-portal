@@ -4,18 +4,27 @@ import MarkdownViewer from "../../components/MarkdownViewer"
 import urls from "../../assets/json/urls.json"
 import { useParams } from "react-router-dom"
 import { Box, IconButton, useDisclosure } from "@chakra-ui/react"
-import { useEffect, useRef, useState } from "react"
+import { RefObject, useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { FaList } from "react-icons/fa"
 import TableOfContents from "../../components/TableOfContents"
 import { marked } from "marked"
 
-const generateTOC = (htmlContent: string) => {
+// Define a type for the Table of Contents items
+interface TOCItem {
+  level: number
+  text: string | null
+  id: string
+}
+
+const generateTOC = (
+  htmlContent: string
+): { toc: TOCItem[]; updatedHtmlContent: string } => {
   const parser = new DOMParser()
   const doc = parser.parseFromString(htmlContent, "text/html")
   const headings = doc.querySelectorAll("h1, h2, h3, h4, h5, h6")
 
-  const toc = Array.from(headings).map((heading) => {
+  const toc: TOCItem[] = Array.from(headings).map((heading) => {
     const level = parseInt(heading.tagName[1], 10)
     const text = heading.textContent
     const id = text?.replace(/\s+/g, "-").toLowerCase() || ""
@@ -32,7 +41,7 @@ export default function InfoPage() {
   const url = urls.find((url) => url.name === infoSlug)?.url
 
   const [markdown, setMarkdown] = useState("")
-  const [toc, setToc] = useState([])
+  const [toc, setToc] = useState<TOCItem[]>([]) // Use the TOCItem type
   const [htmlContent, setHtmlContent] = useState("")
 
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -64,7 +73,7 @@ export default function InfoPage() {
   return (
     <BaseLayout>
       <Header />
-      <Box textAlign={"right"} position="fixed" right="16px" py="4">
+      <Box position="sticky" top="4" textAlign="right" mr="16px" mt="4px">
         <IconButton
           aria-label="Table of Contents"
           title="Table of Contents"
@@ -79,7 +88,7 @@ export default function InfoPage() {
       <TableOfContents
         isOpen={isOpen}
         onClose={onClose}
-        btnRef={btnRef}
+        btnRef={btnRef as RefObject<HTMLButtonElement>}
         toc={toc}
       />
     </BaseLayout>

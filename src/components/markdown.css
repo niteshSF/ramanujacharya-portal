@@ -5,7 +5,7 @@
 .markdown-content h2 {
   color: #ffff00;
   margin-top: 30px;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -17,6 +17,7 @@
 
 .markdown-content blockquote p {
   color: #f30908;
+  text-align: center;
 }
 
 .markdown-content blockquote h1 {
@@ -26,5 +27,12 @@
 
 .markdown-content p {
   color: #ffffff;
+  text-align: justify;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center p {
   text-align: center;
 }
