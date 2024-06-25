@@ -1,4 +1,4 @@
-import BackgroundLayer from "../../components/BackgroundLayer/BackgroundLayer"
+import BackgroundLayer from "../../components/BackgroundLayer/HomeBackgroundLayer"
 import Header from "../../components/Header/Header"
 import Tree from "../../components/Tree/Tree"
 import BaseLayout from "../../layouts/BaseLayout"

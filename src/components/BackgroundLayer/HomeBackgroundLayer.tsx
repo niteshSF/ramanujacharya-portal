@@ -1,7 +1,7 @@
 import { Box, Image } from "@chakra-ui/react"
 import RamaunjaImg from "../../assets/images/ramanuja.png"
 
-export default function BackgroundLayer() {
+export default function HomeBackgroundLayer() {
   return (
     <Box>
       <Image

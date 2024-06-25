@@ -5,7 +5,7 @@
 .markdown-content h2 {
   color: #ffff00;
   margin-top: 30px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -26,6 +26,7 @@
 }
 
 .markdown-content p {
+  font-size: 28px;
   color: #ffffff;
   text-align: justify;
   max-width: 80%;

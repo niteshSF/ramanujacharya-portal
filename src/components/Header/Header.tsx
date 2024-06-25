@@ -19,7 +19,7 @@ export default function Header() {
         transform={"translate(-50%, -50%)"}
         top={"30%"}
         left={"50%"}
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/home")}
         cursor={"pointer"}
       />
       <Image
@@ -29,7 +29,7 @@ export default function Header() {
         transform={"translate(-50%, -50%)"}
         top={"65%"}
         left={"50%"}
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/home")}
         cursor={"pointer"}
       />
       <Image
@@ -39,7 +39,7 @@ export default function Header() {
         transform={"translate(-50%, -50%)"}
         top={"90%"}
         left={"50%"}
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/home")}
         cursor={"pointer"}
       />
     </Box>
