@@ -34,7 +34,7 @@ export default function LandingPage() {
           alt="Title"
           position="absolute"
           top="25%"
-          left="40%"
+          right="25%"
           height="250px"
           zIndex={100}
         />
