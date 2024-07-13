@@ -1,14 +1,25 @@
 import Header from "../../components/Header/Header"
 import BaseLayout from "../../layouts/BaseLayout"
 import MarkdownViewer from "../../components/MarkdownViewer/MarkdownViewer"
-import urls from "../../assets/json/urls.json"
+import { getUrl } from "../../data/urls"
 import { useParams } from "react-router-dom"
-import { Box, IconButton, useDisclosure } from "@chakra-ui/react"
+import {
+  Box,
+  Button,
+  Flex,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  useDisclosure,
+} from "@chakra-ui/react"
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { FaList } from "react-icons/fa"
 import TableOfContents from "../../components/TableOfContents/TableOfContents"
 import { marked } from "marked"
+import { LuChevronDown } from "react-icons/lu"
 
 const generateTOC = (
   htmlContent: string
@@ -27,11 +38,20 @@ const generateTOC = (
 
   return { toc, updatedHtmlContent: doc.body.innerHTML }
 }
+type Lang = "sa" | "en" | "kn" | "te" | "ta"
+
+const languages = [
+  { value: "sa", label: "Devanagari" },
+  { value: "en", label: "Roman Diacritics" },
+  { value: "kn", label: "Kannada" },
+  { value: "te", label: "Telugu" },
+  { value: "ta", label: "Tamil" },
+]
 
 export default function InfoPage() {
   const { infoSlug } = useParams()
 
-  const url = urls.find((url) => url.name === infoSlug)?.url
+  const [lang, setLang] = useState(languages[0])
 
   const [markdown, setMarkdown] = useState("")
   const [toc, setToc] = useState<TOCItem[]>([]) // Use the TOCItem type
@@ -42,6 +62,8 @@ export default function InfoPage() {
 
   useEffect(() => {
     const fetchMarkdown = async () => {
+      console.log(lang)
+      const url = getUrl(infoSlug || "", lang.value as Lang)
       try {
         const response = await axios.get(url || "")
         setMarkdown(response.data)
@@ -51,7 +73,7 @@ export default function InfoPage() {
     }
 
     fetchMarkdown()
-  }, [url])
+  }, [lang, infoSlug])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,6 +97,24 @@ export default function InfoPage() {
           color="#9a0019"
         />
       </Box>
+      <Flex justifyContent="center">
+        <Menu>
+          <MenuButton as={Button} rightIcon={<LuChevronDown />} color="#9a0019">
+            {lang.label}
+          </MenuButton>
+          <MenuList>
+            {languages.map((option) => (
+              <MenuItem
+                key={option.value}
+                color={option.value === lang.value ? "#9a0019" : "black"}
+                onClick={() => setLang(option)}
+              >
+                {option.label}
+              </MenuItem>
+            ))}
+          </MenuList>
+        </Menu>
+      </Flex>
       <Box textAlign={"center"} w="90%" mt="60px" p="4" mx="auto">
         <MarkdownViewer htmlContent={htmlContent} />
       </Box>

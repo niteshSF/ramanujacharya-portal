@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import "./tree.css"
-import defaultData from "../../assets/json/works_of_ramanuja.json"
+import defaultData from "../../data/worksOfRamanujacharya"
 
 export default function Tree() {
   const svgRef = useRef(null)
@@ -13,7 +13,7 @@ export default function Tree() {
 
   useEffect(() => {
     const margin = { top: 10, right: 10, bottom: 10, left: 200 }
-    const width = 800 - margin.left - margin.right
+    const width = 1200 - margin.left - margin.right
     const height = 600 - margin.bottom
 
     d3.select("#tree").select("svg").remove()
@@ -43,6 +43,9 @@ export default function Tree() {
         d.children = null
       }
     }
+
+    root.children.forEach(collapse)
+    collapse(root)
 
     const update = (source) => {
       const treeData = treeLayout(root)
