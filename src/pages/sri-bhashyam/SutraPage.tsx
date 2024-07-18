@@ -26,7 +26,7 @@ export default function InfoPage() {
           </h2>
           <TransliterationInfo />
         </div>
-        <div className="mt-8">
+        <div className="my-8">
           <h2 className="py-2 text-red-500 font-bold text-2xl">Meaning</h2>
           <MeaningInfo />
         </div>

@@ -1,3 +1,7 @@
+import { useSelector } from "react-redux"
+import { selectLanguage } from "../redux/languageSlice"
+import { RootState } from "@/app/store"
+
 const meaning = {
   kannada: "kannada",
   roman: "english",
@@ -5,11 +9,9 @@ const meaning = {
   tamil: "tulu",
 }
 
-interface MeaningInfoProps {
-  language?: string
-}
+export default function MeaningInfo() {
+  const language = useSelector((state: RootState) => selectLanguage(state))
 
-export default function MeaningInfo({ language = "roman" }: MeaningInfoProps) {
   return (
     <div className="bg-secondary font-semibold p-4 [&>*]:p-4 rounded-md h-[300px] overflow-y-scroll overflow-x-auto shadow-md">
       <p>
