@@ -1,16 +1,27 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import HomePage from "./pages/home/HomePage"
-import InfoPage from "./pages/info/InfoPage"
-import LandingPage from "./pages/landing/LandingPage"
+import { Route, Routes } from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import SutraPage from "./pages/sri-bhashyam/SutraPage"
+import SriBhashyamPage from "./pages/sri-bhashyam/SriBhashyamPage"
+import PadaPage from "./pages/sri-bhashyam/PadaPage"
+import AdhikaranaPage from "./pages/sri-bhashyam/AdhikaranaPage"
+import AdhyayaPage from "./pages/sri-bhashyam/AdhyayaPage"
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/info/:infoSlug" element={<InfoPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/sri-bhashyam" element={<SriBhashyamPage />} />
+      <Route path="/sri-bhashyam/:adhyaya" element={<AdhyayaPage />} />
+      <Route path="/sri-bhashyam/:adhyaya/:pada" element={<PadaPage />} />
+      <Route
+        path="/sri-bhashyam/:adhyaya/:pada/:adhikarna"
+        element={<AdhikaranaPage />}
+      />
+      <Route
+        path="/sri-bhashyam/:adhyaya/:pada/:adhikarna/:sutra"
+        element={<SutraPage />}
+      />
+    </Routes>
   )
 }
