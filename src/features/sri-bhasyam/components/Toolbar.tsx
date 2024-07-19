@@ -21,6 +21,7 @@ import {
 import { setSutra } from "../redux/sriBhashyamMetaDataSlice"
 import { useState, useEffect, useRef } from "react"
 import { Toggle } from "@/components/ui/toggle"
+import { toggleVideoPlaying, selectvideoPlaying } from "../redux/videoPlaying"
 
 const languages = [
   { value: "roman", label: "Roman/English" },
@@ -50,10 +51,15 @@ export default function Toolbar() {
     dispatch(setSutra(sutra + increment))
   }
 
+  const isVideoPlaying = useSelector(selectvideoPlaying)
+  console.log(isVideoPlaying)
+
+  const handlePressChange = () => {
+    dispatch(toggleVideoPlaying())
+  }
+
   const isPreviousDisabled = sutra <= 5
   const isNextDisabled = sutra >= sutraLimit
-
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [audioUrl, setAudioUrl] = useState<string | null>(null)
@@ -135,9 +141,13 @@ export default function Toolbar() {
         <Button className="hover:bg-stone-500" onClick={handlePlayPause}>
           {isPlaying ? <Pause /> : <Play />}
         </Button>
-        <Button className="hover:bg-stone-500">
+        <Toggle
+          className="hover:bg-stone-500 data-[state=on]:bg-stone-500 data-[state=off]:bg-secondary	px-4"
+          pressed={isVideoPlaying}
+          onPressedChange={handlePressChange}
+        >
           <Clapperboard />
-        </Button>
+        </Toggle>
       </div>
       <audio ref={audioRef} src={audioUrl} />
     </div>
