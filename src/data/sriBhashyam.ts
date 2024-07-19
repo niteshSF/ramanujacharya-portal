@@ -11,7 +11,10 @@ export const sriBhashyam = {
             { name: "janmādyadhikaraṇam" },
             { name: "shāstrayonitvādhikaraṇam" },
             { name: "samanvayādhikaraṇam" },
-            { name: "īxatyadhikaraṇam" },
+            {
+              name: "īxatyadhikaraṇam",
+              link: "/sri-bhashyam/ixatyadhikaranam",
+            },
             { name: "ānandamayādhikaraṇam" },
             { name: "ākāshādhikaraṇam" },
             { name: "prāṇādhikaraṇam" },

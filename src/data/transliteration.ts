@@ -1,21 +1,56 @@
-export const transliterations = [
+interface Transliteration {
+  kannada: {
+    preSutra: string
+    sutra: string
+    text: string
+  }
+  roman: {
+    preSutra: string
+    sutra: string
+    text: string
+  }
+  telugu: {
+    preSutra: string
+    sutra: string
+    text: string
+  }
+  tamil: {
+    preSutra: string
+    sutra: string
+    text: string
+  }
+  number: number
+}
+
+export const transliterationSelector = (sutraNo: number) => {
+  return transliterations.find(
+    (transliteration) => transliteration.number === sutraNo
+  )
+}
+
+const transliterations: Transliteration[] = [
   {
     kannada: {
       preSutra: "",
       sutra: "ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್ || ೧-೧-೫||",
-      text: "'ಯತೋ ವಾ ಇಮಾನಿ' (ತೈ.ಉ.ಭೃ್೧) ಇತ್ಯಾದಿ ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯ ಪ್ರತಿಪಾದ್ಯಂ ಸರ್ವಜ್ಞಂ ಸರ್ವಶಕ್ತಿ ಸಮಸ್ತಹೇಯಪ್ರತ್ಯನೀಕಕಲ್ಯಾಣಗುಣೈಕತಾನಂ ಬ್ರಹ್ಮ, ಜಿಜ್ಞಾಸ್ಯಮ್-ಇತ್ಯುಕ್ತಮ್। ಇದಾನೀಂ ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯಾನಾಮ್ ಆನುಮಾನಿಕಪ್ರಧಾನಾದಿಪ್ರತಿಪಾದನಾನರ್ಹತಾ ಉಚ್ಯತೇ 'ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್' ಇತ್ಯಾದಿನಾ ||\n\n ಇದಮಾಮ್ನಾಯತೇ ಛಾನ್ದೋಗ್ಯೇ - 'ಸದೇವ ಸೋಮ್ಯೇದಮಗ್ರ ಆಸೀದೇಕಮೇವಾದ್ವಿತೀಯಮ್' (ಛಾಂ.ಉ. ೬-೨-೧) 'ತದೈಕ್ಷತ ಬಹು ಸ್ಯಾಂಪ್ರಜಾಯೇಯೇತಿ, ತತ್ತೇಜೋsಸೃಜತ' (ಛಾಂ.ಉ. ೬-೨-೩) ಇತ್ಯಾದಿ ||\n\n ತತ್ರ ಸಂದೇಹಃ - ಕಿಂ ಸಚ್ಛಬ್ದವಾಚ್ಯಂ ಜಗತ್ಕಾರಣಂ, ಪರೋಕ್ತಮ್ ಆನುಮಾನಿಕಂ ಪ್ರಧಾನಮ್? ಉತ ಉಕ್ತಲಕ್ಷಣಂ ಬ್ರಹ್ಮ? – ಇತಿ। ಕಿಂ ಪ್ರಾಪ್ತಮ್? ಪ್ರಧಾನಮ್ ಇತಿ। ಕುತಃ? 'ಸದೇವ ಸೋಮ್ಯೇದಮಗ್ರ ಆಸೀದೇಕಮೇವಾದ್ವಿತೀಯಂ' (ಛಾಂ.ಉ.೬-೨-೧) ಇತಿ 'ಇದಂ' ಶಬ್ದವಾಚ್ಯಸ್ಯ ಚೇತನಭೋಗ್ಯಭೂತಸ್ಯ ಸತ್ತ್ವರಜಸ್ತಮೋಮಯಸ್ಯ ವಿಯದಾದಿನಾನಾರೂಪವಿಕಾರಾವಸ್ಥಸ್ಯ ವಸ್ತುನಃ ಕಾರಣಾವಸ್ಥಾಂ ವದತಿ। ಕಾರಣಭೂತದ್ರವ್ಯಸ್ಯ ಅವಸ್ಥಾನ್ತರಾಪತ್ತಿರೇವ ಹಿ! ಕಾರ್ಯತಾ। ಅತಃ 'ಯದ್ರವ್ಯಂಯತ್ಸ್ವಭಾವಂ ಚ ಕಾರ್ಯಾವಸ್ಥಮ್, ತತ್ಸ್ವಭಾವಂ ತದೇವ ದ್ರವ್ಯಂ ಕಾರಣಾವಸ್ಥಮ್; ಸತ್ವಾದಿಮಯಂ ಚ ಕಾರ್ಯಮಿತಿ, ಗುಣಸಾಮ್ಯಾವಸ್ಥಂ ಪ್ರಧಾನಮೇವ ಹಿ ಕಾರಣಮ್; ತದೇವ ಉಪಸಂಹೃತಸಕಲವಿಶೇಷಂ ಸನ್ಮಾತ್ರಮಿತಿ, 'ಸದೇವ ಸೋಮ್ಯೇದಮಗ್ರ ಆಸೀದೇಕಮೇವಾದ್ವಿತೀಯಮ್' (ಛಾಂ.ಉ.೬-೨-೧) ಇತ್ಯಭಿಧೀಯತೇ। ತತ ಏವ ಚ, ಕಾರ್ಯ-ಕಾರಣಯೋಃ ಅನನ್ಯತ್ವಮ್ | ತಥಾ ಸತ್ಯೇವ, ಏಕವಿಜ್ಞಾನೇನಸರ್ವವಿಜ್ಞಾನಪ್ರತಿಜ್ಞೋಪಪತ್ತಿ: ಅನ್ಯಥಾ, ಯಥಾ ಸೋಮ್ಯೈಕೇನ ಮೃತ್ಪಿಂಡೇನ' (ಛಾಂ.ಉ.೬-೧-೪) ಇತ್ಯಾದಿಮೃತ್ಪಿಂಡತತ್ಕಾರ್ಯದೃಷ್ಟಾನ್ತದಾರ್ಷ್ಟಾನ್ತಿಕಯೋಃ ವೈರೂಪ್ಯಂ ಚೇತಿ, ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯೇನ, ಮಹರ್ಷಿಣಾ ಕಪಿಲೇನೋಕ್ತಂ ಪ್ರಧಾನಮೇವ ಪ್ರತಿಪಾದ್ಯತೇ। ಪ್ರತಿಜ್ಞಾ-ದೃಷ್ಟಾನ್ತರೂಪೇಣ ಅನುಮಾನವೇಷಮೇವ ಚ ಇದಂ ವಾಕ್ಯಮಿತಿ, ಸಚ್ಛಬ್ದವಾಚ್ಯಮ್ ಆನುಮಾನಿಕಮೇವ ।।\n\n ಇತ್ಯೇವಂ ಪ್ರಾಪ್ತೇ, ಅಭಿಧೀಯತೇ - ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್ - ಇತಿ । ಯಸ್ಮಿನ್ ಶಬ್ದ ಏವ ಪ್ರಮಾಣಂ ನ ಭವತಿ ತತ್ ಅಶಬ್ದಮ್ –ಆನುಮಾನಿಕಮ್; ಪ್ರಾಧಾನಮಿತ್ಯರ್ಥ। ನ ತತ್ ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯಪ್ರತಿಪಾದ್ಯಮ್। ಕುತಃ? ಈಕ್ಷತೇ: - ಸಚ್ಛಬ್ದವಾಚ್ಯಸಂಬನ್ಧಿವ್ಯಾಪಾರ- ವಿಶೇಷಾಭಿಧಾಯಿನಃ ಈಕ್ಷತೇರ್ಧಾತೋಃ ಶ್ರವಣಾತ್ - 'ತದೈಕ್ಷತ ಬಹು ಸ್ಮಾಂ ಪ್ರಜಾಯೇಯ' (ಛಾಂ.ಉ.೬-೨-೩) ಇತಿ।ಈಕ್ಷಣಕ್ರಿಯಾಯೋಗಶ್ಚ ಅಚೇತನೇ ಪ್ರಧಾನೇ ನ ಸಮ್ಭವತಿ। ಅತಃ ಈದೃಶೇಕ್ಷಣಕ್ಷಮಃ ಚೇತನವಿಶೇಷಃ ಸರ್ವಜ್ಞಃ ಸರ್ವಶಕ್ತಿಃ ಪುರುಷೋತ್ತಮಃ ಸಚ್ಛಬ್ದಾಭಿಧೇಯಃ। ತಥಾ 'ಚ ಸರ್ವೆಷ್ವೇವ ಸೃಷ್ಟಿಪ್ರಕರಣೇಷು ಈಕ್ಷಾಪೂರ್ವಿಕೈವ ಸೃಷ್ಟಿ: ಪ್ರತೀಯತೇ - 'ಸ ಈಕ್ಷತ ಲೋಕಾನ್ನು ಸೃಜಾ ಇತಿ' (ಐತ.ಉ.೧-೧) 'ಸ ಇಮಾಂಲ್ಲೋಕಾನಸೃಜತ' (ಐತ.ಉ.೧-೨) 'ಸ ಈಕ್ಷಾಞ್ಚಕ್ರೇ' (ಪ್ರಶ್ನೆ.ಉ.೬-೩) 'ಸ ಪ್ರಾಣಮಸೃಜತ' (ಪ್ರಶ್ನೆ.ಉ.೬-೪) ಇತ್ಯಾದಿಷು ।।\n\n ನನು ಚ - ಕಾರ್ಯಾನುಗುಣೇನೈವ ಕಾರಣೇನ ಭವಿತವ್ಯಮ್? ಸತ್ಯಮ್; ಸರ್ವಕಾರ್ಯಾನುಗುಣ ಏವ ಸರ್ವಜ್ಞಃ ಸರ್ವಶಕ್ತಿ ಸತ್ಯಸಙ್ಕಲ್ಪ: ಪುರುಷೋತ್ತಮಃ ಸೂಕ್ಷ್ಮಚಿದಚಿದ್ವಸ್ತುಶರೀರಕಃ। ಯಥಾಹ 'ಪರಾಽಸ್ಯ​ ಶಕ್ತಿರ್ವಿವಿಧೈವ ಶೂಯತೇ ಸ್ವಾಭಾವಿಕೀ ಜ್ಞಾನಬಲಕ್ರಿಯಾ ಚ' (ಶ್ವೇ.ಉ. ೬-೮) 'ಯಃ ಸರ್ವಜ್ಞಃ ಸರ್ವವಿತ್ ಯಸ್ಯ ಜ್ಞಾನಮಯಂ ತಪಃ' (ಮುಂ.ಉ.೧-೧-೧೦) 'ಯಸ್ಯಾಽವ್ಯಕ್ತಂ ಶರೀರಂ ಯಸ್ಯಾಕ್ಷರಂ ಶರೀರಂ …… ಯಸ್ಯ ಮೃತ್ಯುಶ್ಯರೀರಮ್...ಏಷ ಸರ್ವಭೂತಾನ್ತರಾತ್ಮಾ (ಸು.ಉ. ೭) ಇತಿ।ತದೇತತ್, 'ನ ವಿಲಕ್ಷಣತ್ವಾತ್‌' (ಬ್ರ.ಸೂ.೨-೧-೪) ಇತ್ಯಾದಿಷು ಪ್ರತಿಪಾದಯಿಷ್ಯ​ತೇ। ಅತ್ರ, 'ಸೃಷ್ಟಿವಾಕ್ಯಾನಿ ನ ಪ್ರಧಾನಪ್ರತಿಪಾದನಯೋಗ್ಯಾನಿ' ಇತ್ಯುಚ್ಯತೇ। ವಸ್ತುವಿರೋಧಸ್ತು ತತ್ರೈವ ಪರಿಹರಿಷ್ಯತೇ।\n\nಯತ್ತೂಕ್ತಮ್ - ಪ್ರತಿಜ್ಞಾ - ದೃಷ್ಟಾನ್ತ​ಯೋಗಾತ್ ಅನುಮಾನರೂಪಮೇವ ಇದಂ ವಾಕ್ಕಮಿತಿ, ತದಸತ್ ಹೇತ್ವನುಪಾದನಾತ್, 'ಯೇನಾಽಶ್ರುತಂ ಶ್ರುತಮ್' (ಛಾಂ.ಉ.೬-೧-೩) ಇತಿ, ಏಕವಿಜ್ಞಾನೇನ ಸರ್ವವಿಜ್ಞಾನೇ ಪ್ರತಿಪಿಪಾದಯಿಷಿತೇ, ಸರ್ವಾತ್ಮನಾ ತದಸಂಭವಂ ಮನ್ವಾನಸ್ಯ ತತ್ಸ೦ಭವಮಾತ್ರ- ಪ್ರದರ್ಶನಾಯ ಹಿ, ದೃಷ್ಟಾನ್ತೋಪಾದಾನಮ್। ಈಕ್ಷತ್ಯಾದಿಶ್ರವಣಾದೇವ ಹಿ, ಅನುಮಾನಗನ್ಧಾಭಾವಃ ಅವಗತಃ||",
-      number: 5,
+      text: "ಯತೋ ವಾ ಇಮಾನಿ' (ತೈ.ಉ.ಭೃ್೧) ಇತ್ಯಾದಿ ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯ ಪ್ರತಿಪಾದ್ಯಂ ಸರ್ವಜ್ಞಂ ಸರ್ವಶಕ್ತಿ ಸಮಸ್ತಹೇಯಪ್ರತ್ಯನೀಕಕಲ್ಯಾಣಗುಣೈಕತಾನಂ ಬ್ರಹ್ಮ, ಜಿಜ್ಞಾಸ್ಯಮ್-ಇತ್ಯುಕ್ತಮ್। ಇದಾನೀಂ ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯಾನಾಮ್ ಆನುಮಾನಿಕಪ್ರಧಾನಾದಿಪ್ರತಿಪಾದನಾನರ್ಹತಾ ಉಚ್ಯತೇ 'ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್' ಇತ್ಯಾದಿನಾ ||\n ಇದಮಾಮ್ನಾಯತೇ ಛಾನ್ದೋಗ್ಯೇ - 'ಸದೇವ ಸೋಮ್ಯೇದಮಗ್ರ ಆಸೀದೇಕಮೇವಾದ್ವಿತೀಯಮ್' (ಛಾಂ.ಉ. ೬-೨-೧) 'ತದೈಕ್ಷತ ಬಹು ಸ್ಯಾಂಪ್ರಜಾಯೇಯೇತಿ, ತತ್ತೇಜೋsಸೃಜತ' (ಛಾಂ.ಉ. ೬-೨-೩) ಇತ್ಯಾದಿ ||\n\n ತತ್ರ ಸಂದೇಹಃ - ಕಿಂ ಸಚ್ಛಬ್ದವಾಚ್ಯಂ ಜಗತ್ಕಾರಣಂ, ಪರೋಕ್ತಮ್ ಆನುಮಾನಿಕಂ ಪ್ರಧಾನಮ್? ಉತ ಉಕ್ತಲಕ್ಷಣಂ ಬ್ರಹ್ಮ? – ಇತಿ। ಕಿಂ ಪ್ರಾಪ್ತಮ್? ಪ್ರಧಾನಮ್ ಇತಿ। ಕುತಃ? 'ಸದೇವ ಸೋಮ್ಯೇದಮಗ್ರ ಆಸೀದೇಕಮೇವಾದ್ವಿತೀಯಂ' (ಛಾಂ.ಉ.೬-೨-೧) ಇತಿ 'ಇದಂ' ಶಬ್ದವಾಚ್ಯಸ್ಯ ಚೇತನಭೋಗ್ಯಭೂತಸ್ಯ ಸತ್ತ್ವರಜಸ್ತಮೋಮಯಸ್ಯ ವಿಯದಾದಿನಾನಾರೂಪವಿಕಾರಾವಸ್ಥಸ್ಯ ವಸ್ತುನಃ ಕಾರಣಾವಸ್ಥಾಂ ವದತಿ। ಕಾರಣಭೂತದ್ರವ್ಯಸ್ಯ ಅವಸ್ಥಾನ್ತರಾಪತ್ತಿರೇವ ಹಿ! ಕಾರ್ಯತಾ। ಅತಃ 'ಯದ್ರವ್ಯಂಯತ್ಸ್ವಭಾವಂ ಚ ಕಾರ್ಯಾವಸ್ಥಮ್, ತತ್ಸ್ವಭಾವಂ ತದೇವ ದ್ರವ್ಯಂ ಕಾರಣಾವಸ್ಥಮ್; ಸತ್ವಾದಿಮಯಂ ಚ ಕಾರ್ಯಮಿತಿ, ಗುಣಸಾಮ್ಯಾವಸ್ಥಂ ಪ್ರಧಾನಮೇವ ಹಿ ಕಾರಣಮ್; ತದೇವ ಉಪಸಂಹೃತಸಕಲವಿಶೇಷಂ ಸನ್ಮಾತ್ರಮಿತಿ, 'ಸದೇವ ಸೋಮ್ಯೇದಮಗ್ರ ಆಸೀದೇಕಮೇವಾದ್ವಿತೀಯಮ್' (ಛಾಂ.ಉ.೬-೨-೧) ಇತ್ಯಭಿಧೀಯತೇ। ತತ ಏವ ಚ, ಕಾರ್ಯ-ಕಾರಣಯೋಃ ಅನನ್ಯತ್ವಮ್ | ತಥಾ ಸತ್ಯೇವ, ಏಕವಿಜ್ಞಾನೇನಸರ್ವವಿಜ್ಞಾನಪ್ರತಿಜ್ಞೋಪಪತ್ತಿ: ಅನ್ಯಥಾ, ಯಥಾ ಸೋಮ್ಯೈಕೇನ ಮೃತ್ಪಿಂಡೇನ' (ಛಾಂ.ಉ.೬-೧-೪) ಇತ್ಯಾದಿಮೃತ್ಪಿಂಡತತ್ಕಾರ್ಯದೃಷ್ಟಾನ್ತದಾರ್ಷ್ಟಾನ್ತಿಕಯೋಃ ವೈರೂಪ್ಯಂ ಚೇತಿ, ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯೇನ, ಮಹರ್ಷಿಣಾ ಕಪಿಲೇನೋಕ್ತಂ ಪ್ರಧಾನಮೇವ ಪ್ರತಿಪಾದ್ಯತೇ। ಪ್ರತಿಜ್ಞಾ-ದೃಷ್ಟಾನ್ತರೂಪೇಣ ಅನುಮಾನವೇಷಮೇವ ಚ ಇದಂ ವಾಕ್ಯಮಿತಿ, ಸಚ್ಛಬ್ದವಾಚ್ಯಮ್ ಆನುಮಾನಿಕಮೇವ ।।\n\n ಇತ್ಯೇವಂ ಪ್ರಾಪ್ತೇ, ಅಭಿಧೀಯತೇ - ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್ - ಇತಿ । ಯಸ್ಮಿನ್ ಶಬ್ದ ಏವ ಪ್ರಮಾಣಂ ನ ಭವತಿ ತತ್ ಅಶಬ್ದಮ್ –ಆನುಮಾನಿಕಮ್; ಪ್ರಾಧಾನಮಿತ್ಯರ್ಥ। ನ ತತ್ ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯಪ್ರತಿಪಾದ್ಯಮ್। ಕುತಃ? ಈಕ್ಷತೇ: - ಸಚ್ಛಬ್ದವಾಚ್ಯಸಂಬನ್ಧಿವ್ಯಾಪಾರ- ವಿಶೇಷಾಭಿಧಾಯಿನಃ ಈಕ್ಷತೇರ್ಧಾತೋಃ ಶ್ರವಣಾತ್ - 'ತದೈಕ್ಷತ ಬಹು ಸ್ಮಾಂ ಪ್ರಜಾಯೇಯ' (ಛಾಂ.ಉ.೬-೨-೩) ಇತಿ।ಈಕ್ಷಣಕ್ರಿಯಾಯೋಗಶ್ಚ ಅಚೇತನೇ ಪ್ರಧಾನೇ ನ ಸಮ್ಭವತಿ। ಅತಃ ಈದೃಶೇಕ್ಷಣಕ್ಷಮಃ ಚೇತನವಿಶೇಷಃ ಸರ್ವಜ್ಞಃ ಸರ್ವಶಕ್ತಿಃ ಪುರುಷೋತ್ತಮಃ ಸಚ್ಛಬ್ದಾಭಿಧೇಯಃ। ತಥಾ 'ಚ ಸರ್ವೆಷ್ವೇವ ಸೃಷ್ಟಿಪ್ರಕರಣೇಷು ಈಕ್ಷಾಪೂರ್ವಿಕೈವ ಸೃಷ್ಟಿ: ಪ್ರತೀಯತೇ - 'ಸ ಈಕ್ಷತ ಲೋಕಾನ್ನು ಸೃಜಾ ಇತಿ' (ಐತ.ಉ.೧-೧) 'ಸ ಇಮಾಂಲ್ಲೋಕಾನಸೃಜತ' (ಐತ.ಉ.೧-೨) 'ಸ ಈಕ್ಷಾಞ್ಚಕ್ರೇ' (ಪ್ರಶ್ನೆ.ಉ.೬-೩) 'ಸ ಪ್ರಾಣಮಸೃಜತ' (ಪ್ರಶ್ನೆ.ಉ.೬-೪) ಇತ್ಯಾದಿಷು ।।\n\n ನನು ಚ - ಕಾರ್ಯಾನುಗುಣೇನೈವ ಕಾರಣೇನ ಭವಿತವ್ಯಮ್? ಸತ್ಯಮ್; ಸರ್ವಕಾರ್ಯಾನುಗುಣ ಏವ ಸರ್ವಜ್ಞಃ ಸರ್ವಶಕ್ತಿ ಸತ್ಯಸಙ್ಕಲ್ಪ: ಪುರುಷೋತ್ತಮಃ ಸೂಕ್ಷ್ಮಚಿದಚಿದ್ವಸ್ತುಶರೀರಕಃ। ಯಥಾಹ 'ಪರಾಽಸ್ಯ​ ಶಕ್ತಿರ್ವಿವಿಧೈವ ಶೂಯತೇ ಸ್ವಾಭಾವಿಕೀ ಜ್ಞಾನಬಲಕ್ರಿಯಾ ಚ' (ಶ್ವೇ.ಉ. ೬-೮) 'ಯಃ ಸರ್ವಜ್ಞಃ ಸರ್ವವಿತ್ ಯಸ್ಯ ಜ್ಞಾನಮಯಂ ತಪಃ' (ಮುಂ.ಉ.೧-೧-೧೦) 'ಯಸ್ಯಾಽವ್ಯಕ್ತಂ ಶರೀರಂ ಯಸ್ಯಾಕ್ಷರಂ ಶರೀರಂ …… ಯಸ್ಯ ಮೃತ್ಯುಶ್ಯರೀರಮ್...ಏಷ ಸರ್ವಭೂತಾನ್ತರಾತ್ಮಾ (ಸು.ಉ. ೭) ಇತಿ।ತದೇತತ್, 'ನ ವಿಲಕ್ಷಣತ್ವಾತ್‌' (ಬ್ರ.ಸೂ.೨-೧-೪) ಇತ್ಯಾದಿಷು ಪ್ರತಿಪಾದಯಿಷ್ಯ​ತೇ। ಅತ್ರ, 'ಸೃಷ್ಟಿವಾಕ್ಯಾನಿ ನ ಪ್ರಧಾನಪ್ರತಿಪಾದನಯೋಗ್ಯಾನಿ' ಇತ್ಯುಚ್ಯತೇ। ವಸ್ತುವಿರೋಧಸ್ತು ತತ್ರೈವ ಪರಿಹರಿಷ್ಯತೇ।\n\nಯತ್ತೂಕ್ತಮ್ - ಪ್ರತಿಜ್ಞಾ - ದೃಷ್ಟಾನ್ತ​ಯೋಗಾತ್ ಅನುಮಾನರೂಪಮೇವ ಇದಂ ವಾಕ್ಕಮಿತಿ, ತದಸತ್ ಹೇತ್ವನುಪಾದನಾತ್, 'ಯೇನಾಽಶ್ರುತಂ ಶ್ರುತಮ್' (ಛಾಂ.ಉ.೬-೧-೩) ಇತಿ, ಏಕವಿಜ್ಞಾನೇನ ಸರ್ವವಿಜ್ಞಾನೇ ಪ್ರತಿಪಿಪಾದಯಿಷಿತೇ, ಸರ್ವಾತ್ಮನಾ ತದಸಂಭವಂ ಮನ್ವಾನಸ್ಯ ತತ್ಸ೦ಭವಮಾತ್ರ- ಪ್ರದರ್ಶನಾಯ ಹಿ, ದೃಷ್ಟಾನ್ತೋಪಾದಾನಮ್। ಈಕ್ಷತ್ಯಾದಿಶ್ರವಣಾದೇವ ಹಿ, ಅನುಮಾನಗನ್ಧಾಭಾವಃ ಅವಗತಃ||",
     },
-  },
-  {
-    english:
-      "Because the activity imported by the root īksh (to see i.e. to think) is predicated (in relation to what constitutes the cause of the world) that which is not revealed solely by the scripture, (viz. the pradhāna)341 is not (the Sat or the Existence which is referred to in the scriptural passage relating to the cause of the world).\n\nIt has been already stated that that Brahman, who is taught in the scriptural passage which relates to the cause of the world and which begins with -'From whom all these (beings are born)'-[Taitt. Up. III. I. I.], (that Brahman] who is omniscient, who is omnipotent, who is hostile to all that is evil and forms the only seat of all the auspicious qualities,- has to be  enquired into. Now, by means of this aphorism-'Because the activity imported by the root īksh (to see i. e. to think), is predicated (in relation to what constitutes the cause of the world), that which is not revealed solely by the scripture (viz. the pradhāna) is not (the Sat or the Existence which is referred to in the scriptural passage relating to the cause of the world)',  and by means of other aphorisms, it is declared that the scriptural passages342 which mention the cause of the world do not possess the power of denoting the prādhana and other similar things which are capable of being established by the process of logical inference. This is what is revealed in the Chāndogya: ̶ ' Existence alone, my dear child, this was in the beginning, one only, without a second…….. It thought-'May I become manifold and be born'. It created tejas, &c.' [Chhānd. Up. VI. 2. I, 2, et seq.]. Here the doubt arises whether that, which is the cause of the world and is denoted by the word Existence (or Sat), is the pradhana which has been mentioned by others and is capable of being established by logical inference, or whether it is the Brahman who possesses the characteristics already stated?  It is perhaps held343 that it is the pradhāna. Why? The passage-'Existence alone, my dear child, this was in the beginning, one only, &c.'-speaks of the causalcondition of that thing which is denoted by the word 'this', which constitutes the thing to be enjoyed (or endured) by intelligent beings (viz. the individual souls), and which is made up (of the qualities) of sattva (goodness), rajas (passion), and tamas (darkness), and which (again) exists in variously modified forms such as the ether, &c. Indeed, a thing which exists in the condition of a cause acquires the character of an effect merely by getting into another condition.  Whatever thing and whatever (general) nature (thereof) exist in the condition of a cause, that same thing and that same nature (thereof) exist also in the condition of an effect. Moreover, a produced effect is made up (of the qualities) of sattva, &c. Therefore that pradhāna in which these qualities are held in a state of equilibrium344 is alone the cause (of the universe). That same (pradhāna) is, in the passage  ̶'Existence alone, my dear child, this was in the beginning, one only, without a second', declared to be that undifferentiated existence which has absorbed into itself all differentiating peculiarities. It is for this reason that a cause and its effect have no (essential) difference between them. Only thus can this proposition become appropriate (which says) that, by knowing one thing, all things become known. Otherwise, there would further be a complete difference between the thing intended to be illustrated and the example of the lump of clay and of the produced effects thereof, which are (all) given as an illustration in the scriptural passage that begins with-'Just as, my dear child, by one lump of clay, &c.'- [Chhānd. Up.VI.I.4.].  Therefore, in the scriptural passage which relates to the cause of the world, nothing other than the pradhāna taught by the great sage Kapila is mentioned. Moreover, this passage (now under discussion) contains a proposition and an illustration, and thus it has surely the form of a logical inference. Consequently, what is denoted by the word Existence (or Sat) is nothing other than that (pradhāna) which is capable of being proved by inference (to be the cause of the world).\n\nIf it be so held, it is stated (in reply) thus: ̶ 'Because the activity imported by the root īksh (to see i. e. to think), is predicated (in relation to what constitutes the cause of the world), that which is not revealed solely by the scripture (viz. the pradhāna) is not (the Sat or the Existence which is referred to in the scriptural passage relating to that cause of the world).' That which is not revealed solely by the scripture is that in relation to which the scripture alone does not form the means of proof. It is that which is capable of being established by the process of logical inference. The meaning is that it is the pradhāna. That (pradhānd) is not denoted by the scriptural passages relating to the cause of the world. Why ? Because the activity imported by the root īksh (to see i. e. to think) is predicated.  That is, because the root īksh is used, in the scriptural passage - 'It thought May I become manifoldand be born.'- [Chhānd. Up. VI. 2. 3.], to denote a particular kind of activity in relation to what is imported by the word Existence (or Sat). And it is not possible for the nonintelligent pradhāna to be associated with the activity ofseeing (i. e. of thinking). Therefore, what forms the import of the word Existence (or Sat) is that Highest Person who is capable of so ‘seeing ', and who is a particular intelligent Being that is omniscient and omnipotent. Accordingly, in all contexts which relate to creation, the act of creation isinvariably preceded by the act of 'seeing' (i. e. of thinking), as in the following and other scriptural passages :-'He thought-May I create the worlds'. He created these worlds.' [Ait. Up. I. i & 2.];  'He thought …..  He created the prāṇas.' [Pr. Up. VI. 3 & 4.].\n\nIt may, however, be said here that the cause has necessarily to be in natural conformity with the effect. That is true ; and the Highest Person who is omniscient and omnipotent, who wills the truth, and who owns the intelligent as well as the non-intelligent things in their subtle state as His body, is certainly in natural conformity with all produced effects. For example, the following scriptural passages say the same thing:-'His supreme power is revealed, indeed, as varied, natural, and as consisting of knowledge, strength, and action.' [Svct. Up. VI. 8.];  'He who understands all and who knows all and whose tapas345 consists of knowledge'-[Mund. Up. I.i. 9.];  'He whose body is the avyakta346 whose body is the akshara ….. whose body is mrityu, He is the internal Self of all beings.' [Sub. Up. VII.]. And this will be fully explained under the aphorism-'(The Brahman is) not (the cause of the world), because (He is) different (from this world)' [Ved. Sūt. II. i. 4.], and also under other aphorisms. Here, (however), it is maintained that the scriptural passages relating to the creation of the world are not capable of importing the pradhāna. The logical objections in regard to what actuallyforms the import (of those passages) will be invalidated in that same context (in which this above-mentioned aphorism occurs).\n\nWhat has been stated to the effect that this passage (viz. Chhānd. Up. VI. i & 2.) is decidedly in the form of a logical inference, on account of its containing a proposition and an illustration, - that is not right; because there is not given in it any basis of logical inference ( i.e. the middle term). When, by means of the passage '(Did you ask for that teaching) by which what is not heard becomes heard' [Chhānd. Up. VI. i. 3.], it is desired to teach how by knowing (a certain) one thing all things become known, then, the example (of the clay, &c.,) is indeed made use of merely to show the possibility of such a thing -  to him who is of opinion that such a thing is altogether impossible. As a matter of fact, solely for the reason that the activity imported by the root īksh (to see i. e. to think), is declared (in relation to what forms the cause of the world), it is made out that there is not even the remotest mention of any logical inference (here). \n\nIt may again be said thus:-  It is not that main and natural significance of 'seeing ', which is found to exist in intelligent beings, that is mentioned here ; but, on the other hand, it is a figurative significance of 'seeing' (that is implied here); because, in the following scriptural passages 'That fire saw' [Chhānd. Up. VI. 2. 3.],  “Those waters saw' [Chhānd. Up. VI. 2.4.], there is the association of a figurative 'seeing' (with the pradhāna).  Moreover, it is common to apply figuratively the attributes of intelligent beings to non-intelligent things, as in the instances, 'The paddy crops are expecting the rains',  'By means of the rains the (sown) seed became exceedingly gladdened.'\n\nTherefore, after stating the supposition that the ‘seeing' (here mentioned) may be figurative, he (the Sutrakara) disproves it (thus).",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 5. Īkshaternāśabdam",
+      text: "yato vā imāni' ityādijagatkāraṇavādivākyapratipādyaṃ sarvajñaṃ sarvaśaktisamastaheyapratyanīkakalyāṇaguṇaikatānaṃ brahma jijñāsyamityuktam . idānīṃ jagatkāraṇavādivākyānāmānumānikapradhānādipratipādanārnahatocyate- īkṣaternāśabdamityādinā\n\nidamāmnāyate chāndogye- 'sadeva somyedamagra āsīdekamevādvitīyam . tadaikṣata bahu syāṃ prajāyeyeti tattejo'sṛjata' ityādi . tatra sandehaḥ, kiṃ sacchabdavācyaṃ jagatkāraṇaṃ paroktamānumānikaṃ pradhānam ? utoktalakṣaṇaṃ brahma ? iti . kiṃ prāptam ? pradhānamiti . kutaḥ ? 'sadeva somyedamagra āsīdekamevādvitīyam' itīdaṃśabdavācyasya cetanabhogyabhūtasya sattvarajastamomayasya viyadādinānārūpavikārāvasthasya vastunaḥ kāraṇāvasthāṃ vadati, kāraṇabhūtadravyasyāvasthāntarāpattireva hi kāryatā, ato yaddravyaṃ yatsvabhāvaṃ ca kāryāvastham; tatsvabhāvaṃ tadeva dravyaṃ kāraṇāvastham . sattvādimayaṃ ca kāryamiti guṇasāmyāvasthaṃ pradhānameva hi kāraṇam . tadevopasaṃhṛtasakalaviśeṣaṃ sanmātramiti 'sadeva somyedamagra āsīdekamevādvitīyam' ityabhidhīyate . tata eva ca kāyarkāraṇayorananyatvam, tathā satyevaikavijñānena sarvavijñānapratijñopapattiḥ . anyathā 'yathā somyaikena mṛtpiṇḍena' ityādimṛtpiṇḍatatkāryadṛṣṭāntadārṣṭāntikayorvairūpyaṃ ceti jagatkāraṇavādivākyena maharṣiṇā kapilenoktaṃ pradhānameva pratipādyate . pratijñādṛṣṭāntarūpeṇānumānaveṣameva cedaṃ vākyamiti sacchabdavācyamānumānikameva-ityevaṃprāpte'bhidhīyate- īkṣaternāśabdamiti . yasmin śabda eva pramāṇaṃ na bhavati tadaśabdam . ānumānikam,pradhānamityarthaḥ . na tajjagatkāraṇavādivākyapratipādyam . kutaḥ ? īkṣateḥ sacchabdavācyasambandhivyāpāraviśeṣābhidhāyina īkṣaterdhātoḥ śravaṇāt . 'tadaikṣata bahu syāṃ prajāyeya' iti īkṣaṇakriyāyogaścācetane pradhāne na sambhavati. ataḥ īdṛśekṣaṇakṣamaścetanaviśeṣassarvajñaḥ sarvaśaktiḥ puruṣottamaḥ sacchabdābidheyaḥ . tathā ca sarveṣveva sṛṣṭiprakaraṇeṣvīkṣāpūrvikaiva sṛṣṭiḥ pratīyate 'sa īkṣata lokānnu sṛjā iti sa imāṃllokānasṛjata' 'sa īkṣāñcakre sa prāṇamasṛjata' ityādiṣu . nanu ca kāryānuguṇenaiva kāraṇena bhavitavyam . satyam, sarvakāryānuguṇa eva sarvajñaḥ sarvaśaktiḥ satyasaṅkalpaḥ puruṣottamaḥ sūkṣmacidacidvastuśarīrakaḥ . yathāha 'parā'sya śaktirvividhaiva śrūyate svābhāvikī jñānabalakriyā ca' 'yaḥ sarvajñaḥ sarvavidyasya jñānamayaṃ tapaḥ' 'yasyāvyaktaṃ śarīraṃ yasyākṣaraṃ śarīraṃ yasya mṛtyuḥ śarīram eṣa sarvabhūtāntarātmā' iti . tadetat 'na vilakṣaṇatvāt' ityādiṣu pratipādayiṣyate . atra sṛṣṭivākyāni na pradhānapratipādanayogyānītyucyate . vastuvirodhastu tatraiva parihariṣyate . yattūktampratijñādṛṣṭāntayogādanumānarūpamevedaṃ vākyamiti . tadasat, hetvanupādanāt . 'yenāśrutaṃ śrutam' ityekavijñānena sarvavijñāne pratipipādayiṣite sarvātmanā tadasambhavaṃ manvānasya tatsambhavamātrapradarśanāya hi dṛṣṭāntopādānam . īkṣatyādiśravaṇādeva hyanumānagandhābhāvo'vagataḥ .",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 5,
   },
   {
     kannada: {
@@ -23,119 +58,160 @@ export const transliterations = [
         "ಅಥ ಸ್ಯಾತ್ - ನ ಚೇತನಗತಂ ಮುಖ್ಯಮ್ ಈಕ್ಷಣಮ್ ಇಹೋಚ್ಯತೇ, ಅಪಿ ತು ಪ್ರಧಾನಗತಂ ಗೌಣಮೀಕ್ಷಣಮ್; 'ತತ್ತೇಜ ಐಕ್ಷತ' (ಛಾಂ.ಉ.೬-೨-೩) 'ತಾ ಆಪ ಐಕ್ಷನ್ತ' (ಛಾಂ.ಉ.೬-೨-೪) ಇತಿ ಗೌಣೇಕ್ಷಣಸಾಹಚರ್ಯಾತ್ । ಭವತಿ ಚ ಅಚೇತನೇಷ್ವಪಿ ಚೇತನಧರ್ಮೋಪಚಾರಃ; ಯಥಾ - 'ವೃಷ್ಟಿಪ್ರತೀಕ್ಷಾಃ ಶಾಲಯಃ' ವರ್ಷೇಣ ಬೀಜಂ ಪ್ರತಿಸಂಜಹರ್ಷ (ವಾ.ರಾ.ಸು.ಕಾ.೨೬-೬) ಇತಿ। 'ಅತಃ ಗೌಣಮೀಕ್ಷಣಮ್' ಇತಿ ಇಮಾಮಾಶಂಕಾಮ್ ಅನುಭಾವ್ಯ ಪರಿಹರತಿ ।",
       sutra: "ಗೌಣಶ್ಚೇನ್ನಾತ್ಮಶಬ್ದಾತ್ || ೧-೧-೬ ||",
       text: "ಯದುಕ್ತಮ್ - ಗೌಣೇಕ್ಷಣಸಾಹಚರ್ಯಾತ್, ಸತೋSಪಿ ಈಕ್ಷಣವ್ಯಪದೇಶಃ ಸರ್ಗನಿಯತ ಪೂರ್ವಾವಸ್ಥಾಭಿಪ್ರಾಯೋ ಗೌಣಃ – ಇತಿ | ತನ್ನ 'ಏತದಾತ್ಮಮಿದಂ ಸರ್ವಮ್ | ತತ್ಸತ್ಯಂ, ಸ ಆತ್ಮಾ' (ಛಾಂ.ಉ. ೬-೮-೭) ಇತಿ, ಸಚ್ಛಪ್ರತಿಪಾದಿತಸ್ಯ 'ಆತ್ಮ' ಶಬ್ಧೇನ ವ್ಯಪದೇಶಾತ್ ||\n\n ಏತದುಕ್ತಂ ಭವತಿ – 'ಏತದಾತ್ಮಮಿದಂ ಸರ್ವಂ ….. ಸ ಆತ್ಮಾ' ಇತಿ ಚೇತನಾಚೇತನಪ್ರಪಂಚೋದ್ದೇಶೇನ ಸತಃ ಆತ್ಮತ್ಯೋಪದೇಶೋಽಯಮ್, ನ ಅಚೇತನೇ ಪ್ರಧಾನೇ ಸಙ್ಗಚ್ಛತೇ - ಇತಿ ।। ಅತಃ ತೇಜೋಬನ್ನಾನಾಮಪಿ ಪರಮಾತ್ಯೈವ ಆತ್ಮೇತಿ, ತೇಜಃಪ್ರಕೃತಯೋSಪಿ ಶಬ್ದಾಃ ಪರಮಾತ್ಮನ ಏವ ವಾಚಕಾಃ । ತಥಾ ಹಿ – 'ಹನ್ತಾಹಮಿಮಾಸ್ತಿಸ್ರೋ ದೇವತಾ ಅನೇನ ಜೀವೇನಾತ್ಮನಾನುಪ್ರವಿಶ್ಯನಾಮರೂಪೇ ವ್ಯಾಕರವಾಣಿ' (ಛಾಂ.ಉ.೬-೩-೨) ಇತಿ ಪರಮಾತ್ಮಾನುಪ್ರವೇಶಾದೇವ ತೇಜಃಪ್ರಭೃತೀನಾಂ ವಸ್ತುತ್ವಂ ತತ್ತನ್ನಾಮಭಾಕ್ತ್ವಂ ಚೇತಿ, 'ತತ್ತೇಜ ಐಕ್ಷತ' (ಛಾಂ.ಉ.೬-೨-೪) 'ತಾ ಆಪ ಐಕ್ಷನ್ತ' (ಛಾಂ.ಉ.೬-೨-೪) ಇತ್ಯಪಿ, ಮುಖ್ಯ ಏವ ಈಕ್ಷಣವ್ಯಪದೇಶಃ। ಅತಃ ಸಾಹಚರ್ಯಾದಪಿ, 'ತದೈಕ್ಷತ' (ಛಾಂ.ಉ.೬-೨-೩) ಇತ್ಯತ್ರ ಗೌಣತ್ವಾಶಂಕಾ ದೂರೋತ್ಸಾರಿತಾ - ಇತಿ ಸೂತ್ರಾಭಿಪ್ರಾಯಃ ||",
-      number: 6,
     },
-  },
-  {
-    english:
-      "If it be said that it (viz. the import of the root īksh, to see) is (here) figurative, (it is maintained that) it cannot be so; because there is the word Ātman (or Self mentioned in the context).347\n\n What has been stated (above) to the effect that, since there is the association of a figurative 'seeing'(with the pradhāna), this predication of 'seeing' in relation to Existence (or Sat) also is figurative, and is intended to denote that condition (of the pradhāna) which invariably precedes creation, this is not right; because, in the following passage (occurring in that context)- 'All this has That for its Self; That is Existence; That is the Atman (or the Self).' [Chhānd. Up. VI. 8. 7.], - that which is denoted by the word Existence (or Sat) is (also) denoted by the word Ātman (or Self). What is said is this:-That teaching, which is found in the passage “All this has That for its Self. That is the Self.' [Chhānd. Up. VI. 8. 7.], has in view the world which is made up of intelligent and non-intelligent things, and points out that the Sat (or the Existence) is the Self thereof; and it (viz. such a teaching) cannot be appropriately given in relation to the (purely) nonintelligent thing pradhāna. Thus the elements of fire (tejas), water, and earth have also the Highest Self for their Self.  Therefore the words tejas, &c., are also significant of the Highest Self alone.  Accordingly there is the following scriptural passage:  ̶'Indeed entering into these three deities along with this individual self which is (also) the same as Myself, I evolve the differentiation of names and forms.' [Chhānd. Up. VI. 3. 2.]. And from this it follows that tejas and the other elements acquire the character of being things and also the capability of assuming their own particular names wholly as a consequence of the Supreme Self entering into them. Therefore in these statements also, namely,- 'That fire saw';-'Those waters saw'-[Chhānd. Up. VI. 2, 3 & 4.], the predication of 'seeing' has its primary and natural significance.Consequently, in the statement -'It saw' ̶  [Chhānd. Up. VI. 2. 3.], the supposition, which gives a figurative significance (to 'seeing') even as a consequence of the association (of that 'seeing' with the pradhāna), is altogether dispelled (as wrong). Such is the meaning of this aphorism.",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 6. Gauṇaśchenātmashabdāt",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 6,
   },
   {
     kannada: {
       preSutra: "ಇತಶ್ಚ, ನ ಪ್ರಧಾನಂ ಸಚ್ಛಬ್ದ ಪ್ರತಿಪಾದ್ಯಮ್ -",
       sutra: "ತನ್ನಿಷ್ಠಸ್ಯ ಮೋಕ್ಷೋಪದೇಶಾತ್ || ೧-೧-೭ ||",
       text: "ಮುಮುಕ್ಷೋಃ ಶ್ವೇತಕೇತೋಃ, 'ತತ್ ತ್ವಮಸಿ' (ಛಾಂ.ಉ.೬-೮-೭) ಇತಿ ಸದಾತ್ಮಕತ್ವಾನುಸಂಧಾನಮ್ ಉಪದಿಶ್ಯ, ತನ್ನಿಷ್ಠಸ್ಯ 'ತಸ್ಯ ತಾವದೇವ ಚಿರಂ, ಯಾವನ್ನ ವಿಮೋಕ್ಷೆ, ಅಥ ಸಂಪತ್ಸ್ಯೇ’ (ಛಾಂ.ಉ.೬-೧೪-೨) ಇತಿ 'ಶರೀರಪಾತಮಾತ್ರಾನ್ತರಾಯಃ ಬ್ರಹ್ಮಸಂಪತ್ತಿಲಕ್ಷಣೋ ಮೋಕ್ಷಃ' ಇತ್ಯುಪದಿಶತಿ । ಯದಿ ಚ ಪ್ರಧಾನಮ್ ಅಚೇತನಂ ಕಾರಣಮುಪದಿಶ್ಯೇತ; ತದಾ ತದಾತ್ಮಕತ್ವಾನುಸಂಧಾನಸ್ಯ ಮೋಕ್ಷಸಾಧನತ್ವೋಪದೇಶಃ ನೋಪಪದ್ಯತೇ । 'ಯಥಾಕ್ರತುರಸ್ಮಿಂಲ್ಲೋಕೇ ಪುರುಷೋ ಭವತಿ, ತಥೇತಃ ಪ್ರೇತ್ಯ ಭವತಿ' (ಛಾ೦.ಉ.೩-೧೪-೧) ಇತಿ, ತನ್ನಿಷ್ಠಸ್ಯ ಅಚೇತನಸಂಪತ್ತಿರೇವ ಸ್ಯಾತ್ | ನ ಚ, ಮಾತಾಪಿತೃ- ಸಹಸ್ರೇಭ್ಯೋSಪಿ ವತ್ಸಲತರಂ ಶಾಸ್ತ್ರಮ್, ಏವಂವಿಧತಾಪತ್ರಯಾಭಿಹತಿಹೇತುಭೂತಾಮ್ ಅಚಿತ್ಸಂಪತ್ತಿಮ್ ಉಪದಿಶತಿ | ಪ್ರಧಾನಕಾರಣವಾದಿನೋsಪಿ ಹಿ ಪ್ರಧಾನನಿಷ್ಠಸ್ಯ ಮೋಕ್ಷಂ ನಾಭ್ಯುಪಗಚ್ಛನ್ತಿ ।।",
-      number: 7,
     },
-  },
-  {
-    english:
-      "Because (also) it is taught (in the context) that he who is firmly devoted to That (viz. the Sat) obtains final release.After the scriptural sentence-'That thou art'- [Chhānd. Up. VI. 8. 7.],- teaches Śvetaketu, who is desirous of attaining final release, that the Sat is to be continuously meditated upon as the Ātman (or the Self), this (other) sentence -“ As long as he is not freed (from the body), so long there is delay; then he will be blessed.'- [Chhānd. Up. VI. 14. 2.]- tells him that in the case of the person, who is firmly devoted to that (Sat or One Existence), final release, the nature of which is the attainment of the Brahman, is delayed only till the falling off of the body. And if the non-intelligent pradhāna had been taught to be the cause of the world, then it would not have been appropriateto teach that the continuous meditation of it as the Self forms the means of attaining final release. And according to the passage -'Of whatever nature a man's worship is in this world, of that nature he becomes after death.'-[Chhānd. Up. III. 14. i.], - there must result to him, who is firmly devoted to that (pradhāna),  nothing other than the attainment of that (same) non-intelligent thing (or the pradhāna).  Moreover, the sastra  (or the scripture), which is much more affectionate (towards us) than even thousands of mothers and fathers, cannot teach (us) to attain that non-intelligent thing (orpradhāna) which forms the' Cause of (our) being attacked by (our) well-known three miseries.348  Indeed those who maintain that the pradhāna forms the cause of the world do not acknowledge that final release results to him who is firmly devoted to (that) pradhāna.",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 7. Tannishṭhasya mokshopadeśāt.",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 7,
   },
   {
     kannada: {
       preSutra: "ಇತಶ್ಚ, ನ ಪ್ರಧಾನಮ್ -",
       sutra: "ಹೇಯತ್ವಾವಚನಾಚ್ಚ || ೧-೧-೮ ||",
       text: "ಯದಿ ಪ್ರಧಾನಮೇವ ಕಾರಣಂ ಸಚ್ಛಬ್ದಾಭಿಹಿತಂ ಭವೇತ್; ತದಾ ಮುಮುಕ್ಷೋ ಶ್ವೇತಕೇತೋಃ ತದಾತ್ಮಕತ್ವಮ್, ಮೋಕ್ಷವಿರೋಧಿತ್ವಾತ್ ಹೇಯತ್ತ್ವೇನೈವ ಉಪದೇಶಂ ಸ್ಮಾತ್ | ನ ಚ ತತ್ ಕ್ರಿಯತೇ, ಪ್ರತ್ಯುತ ಉಪಾದೇಯತ್ವೇನೈವ, 'ತತ್ತ್ವಮಸಿ' (ಛಾಂ.ಉ ೬-೮-೭) 'ತಸ್ಯ ತಾವದೇವ ಚಿರಮ್' (ಛಾಂ.ಉ.೬-೧೪-೨) ಇತ್ಯುಪದಿಶ್ಯತೇ ।।",
-      number: 8,
     },
-  },
-  {
-    english:
-      "Because also it is not declared (in the context) that it (viz. what is denoted by the word Sat or Existence) deserves to be discarded.If the pradhāna alone were that cause (of creation) which is denoted by the word Sat (or Existence), then (the idea of) Śvetaketu, who was desirous of attaining final release, being the same as that (Sat) would be opposed to (his) final release, and should therefore have been taught (to him) to be only such (an idea) as altogether deserved to be discarded. And that is not done. On the contrary, in the following passages, namely, 'That thou art,'-  [Chhānd. Up. VI. 8.7.]; 'So long as he is not (freed from the body), &c.'- [Chhānd. Up. VI. 14. 2.],- it is taught that that (idea of his being the same as the Sat} is necessarily such as deserves to be adopted (by him).",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 8,
   },
   {
     kannada: {
       preSutra: "ಇತಶ್ಚ, ನ ಪ್ರಧಾನಮ್ -",
-      sutra: "ಪ್ರತಿಜ್ಞಾವಿರೋಧಾತ್ || ೧-೧-೯ 11",
-      text: "ಪ್ರಧಾನಕಾರಣತ್ವೇ, ಪ್ರತಿಜ್ಞಾವಿರೋಧಶ್ಚ ಭವತಿ । ವಾಕ್ಯೋಪಕ್ರಮೇ ಹಿ ಏಕವಿಜ್ಞಾನೇನ ಸರ್ವವಿಜ್ಞಾನಂ ಪ್ರತಿಜ್ಞಾತಮ್ । ತಚ್ಚ ಕಾರ್ಯ-ಕಾರಣಯೋಃ 'ಅನನ್ಯತ್ವೇನ, ಕಾರಣಭೂತಸದ್ವಿಜ್ಞಾನಾತ್ ತತ್ಕಾರ್ಯಭೂತ ಚೇತನಾಚೇತನಪ್ರಪಂಚಸ್ಯ ಜ್ಞಾತತಯೈವ, ಉಪಪಾದನೀಯಮ್ | ತತ್ತು, ಪ್ರಧಾನಕಾರಣತ್ವೇ ಚೇತನವರ್ಗಸ್ಯ ಪ್ರಧಾನಕಾರ್ಯತ್ವಾಭಾವಾತ್, ಪ್ರಧಾನವಿಜ್ಞಾನೇನ ಚೇತನವರ್ಗವಿಜ್ಞಾನಾಸಿದ್ದೇಃ ವಿರುದ್ಧ್ಯತೇ ।।",
-      number: 9,
+      sutra: "ಪ್ರತಿಜ್ಞಾವಿರೋಧಾತ್ || ೧-೧-೯ ||",
+      text: "ಪ್ರಧಾನಕಾರಣತ್ವೇ, ಪ್ರತಿಜ್ಞಾವಿರೋಧಶ್ಚ ಭವತಿ । ವಾಕ್ಯೋಪಕ್ರಮೇ ಹಿ ಏಕವಿಜ್ಞಾನೇನ ಸರ್ವವಿಜ್ಞಾನಂ ಪ್ರತಿಜ್ಞಾತಮ್ । ತಚ್ಚ ಕಾರ್ಯ-ಕಾರಣಯೋಃ 'ಅನನ್ಯತ್ವೇನ, ಕಾರಣಭೂತಸದ್ವಿಜ್ಞಾನಾತ್ ತತ್ಕಾರ್ಯಭೂತ ಚೇತನಾಚೇತನಪ್ರಪಂಚಸ್ಯ ಜ್ಞಾತತಯೈವ, ಉಪಪಾದನೀಯಮ್ | ತತ್ತು, ಪ್ರಧಾನಕಾರಣತ್ವೇ ಚೇತನವರ್ಗಸ್ಯ ಪ್ರಧಾನಕಾರ್ಯತ್ವಾಭಾವಾತ್, ಪ್ರಧಾನವಿಜ್ಞಾನೇನ ಚೇತನವರ್ಗವಿಜ್ಞಾನಾಸಿದ್ದೇಃ ವಿರುದ್ಧ್ಯತೇ ।।\"",
     },
-  },
-  {
-    english:
-      "If the pradhāna were taken to be the cause of the world, there would also be the contradiction of the proposition (enunciated in the context). Indeed, in the very beginning of the scriptural passage (under reference), the proposition is enunciated that, by knowing a (certain) single thing, all things become known. And that (proposition,) has to be justified solely by means of the fact that, from the knowledge of the causal Sat (or Existence), the world, which is its produced effect and is made up of the intelligent and the non-intelligent things, becomes known; and the reason (for this) is that a cause and its effect are not different from each other. But the whole collection of intelligent beings (viz. the individual selves) cannot be the effects produced out of the pradhāna; and consequently, by knowing the pradhāna, the knowledge relating to the whole collection of intelligent beings cannot result; thus this (proposition itself) would be contradicted if the pradhāna be taken to be the cause of the world.",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 9. Pratijñāvirodhāt.",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 9,
   },
   {
     kannada: {
       preSutra: "ಇತಶ್ಚ, ನ ಪ್ರಧಾನಮ್",
       sutra: "ಸ್ವಾಪ್ಯಯಾತ್‌ || ೧-೧-೧೦ ||",
       text: "ತದೇವ ಸಚ್ಚಬ್ದವಾಚ್ಯಂ ಪ್ರಕೃತ್ಯ ಆಹ - 'ಸ್ವಪ್ನಾನ್ತಂ ಮೇ ಸೋಮ್ಯ ವಿಜಾನೀಹೀತಿ । ಯತ್ರೈತತ್ಪುರುಷಃ ಸ್ವಪಿತಿ ನಾಮ, ಸತಾ ಸೋಮ್ಯ ತದಾ ಸಂಪನ್ನೋ ಭವತಿ | ಸ್ವಮಪೀತೋ ಭವತಿ |ತಸ್ಮಾದೇನಂ ಸ್ವಪಿತೀತ್ಯಚಕ್ಷತೇ, 'ಸ್ವಂ ಹ್ಯಪೀತೋ ಭವತಿ' (ಛಾಂ.ಉ.೬೮-೧) ಇತಿ, ಸುಷುಪ್ತಂ ಜೀವಂ ಸತಾ ಸಮ್ಪನ್ನಮ್, 'ಸ್ವಮಪೀತಃ - ಸ್ವಸ್ಮಿನ್ ಪ್ರಲೀನಃ' ಇತಿ ವ್ಯಪದಿಶತಿ | ಪ್ರಲಯಶ್ಚ ಸ್ವಕಾರಣೇ ಲಯಃ | ನ ಚ ಅಚೇತನಂ ಪ್ರಧಾನಂ, ಚೇತನಸ್ಯ ಜೀವಸ್ಯ ಕಾರಣಂ ಭವಿತುಮರ್ಹತಿ ॥'ಸ್ವಮಪೀತೋ ಭವತಿ' - ಆತ್ಮಾನಮೇವ, ಜೀವಃ ಅಪೀತೋ ಭವತೀತ್ಯರ್ಥಃ | ಚಿದ್ವಸ್ತುಶರೀರಕಂ ತದಾತ್ಮಭೂತಂ ಬ್ರಹ್ಯೈವ ಜೀವಶಬ್ಧೇನ ಅಭಿಧೀಯತೇ ಇತಿ, ನಾಮರೂಪವ್ಯಾಕರಣಶ್ರುತ್ಯಾ ಉಕ್ತಮ್ | ತತ್ ಜೀವಶಬ್ದಾಭಿಧೇಯಂ ಬ್ರಹ್ಮ, ಸುಷುಪ್ತಿ ಕಾಲೇSಪಿ ಪ್ರಲಯಕಾಲ ಇವ ನಾಮರೂಪಪರಿಷ್ವಙ್ಗಾಭಾವಾತ್ ಕೇವಲ ಸಚ್ಛಬ್ಧಾಭಿಧೇಯಮಿತಿ, 'ಸತಾ ಸೋಮ್ಯ ತದಾ ಸಮ್ಪನ್ನೋ ಭವತಿ, ಸ್ವಮಪೀತೋ ಭವತಿ' (ಛಾಂ.ಉ.೬-೮-೧) ಇತ್ಯುಚ್ಯತೇ । ತಥಾ ಸಮಾನಪ್ರಕರಣೇ, ನಾಮ-ರೂಪಪರಿಷ್ವಂಗಾಭಾವೇನ ಪ್ರಾಜ್ಞನೈವ ಪರಿಷ್ವಙ್ಗಾತ್, 'ಪ್ರಾಜ್ಞೇನಾತ್ಮನಾ ಸಂಪರಿಷ್ವಕ್ತೋ ನ ಬಾಹ್ಯಂ ಕಿಞ್ಚನ ವೇದ, ನಾನ್ತರಮ್' (ಬೃ.ಉ.೬-೩-೨೧) ಇತ್ಯುಚ್ಯತೇ ।।ಆಮೋಕ್ಷಾತ್ ಜೀವಸ್ಯ ನಾಮರೂಪಪರಿಷ್ವಙ್ಗಾದೇವ ಹಿ ಸ್ವವ್ಯತಿರಿಕ್ತವಿಷಯಜ್ಞಾನೋದಯ: ಸುಷುಪ್ತಿಕಾಲೇ ಹಿ ನಾಮರೂಪೇ ವಿಹಾಯ ಸತಾ ಸಂಪರಿಷ್ವಕ್ತಃ, ಪುನರಪಿ ಜಾಗರದಶಾಯಾಂ ನಾಮ- ರೂಪೇ ಪರಿಷ್ವಜ್ಯ, ತತ್ತನ್ನಾಮರೂಪೋ ಭವತೀತಿ, ಶ್ರುತ್ಯಂತರೇ ಸ್ಪಷ್ಟಮಭಿಧೀಯತೇ – 'ಯದಾ ಸುಪ್ತಃ ಸ್ವಪ್ನಂ ನ ಕಥಞ್ಚನ ಪಶ್ಯತಿ, ಅರ್ಥಾಸ್ಮಿನ್ ಪ್ರಾಣ ಏವೈಕಧಾ ಭವತಿ' (ಕೌಷೀ.ಉ.೪-೩೯) 'ಏತಸ್ಮಾದಾತ್ಮನಃ ಪ್ರಾಣಾ ಯಥಾಯತನಂ ವಿಪ್ರತಿಷ್ಠನ್ತೇ' (ಕೌಪೀ.ಉ.೪-೪೦) ತಥಾ - 'ತ ಇಹ ವ್ಯಾಘ್ರೋ ವಾ ಸಿಂಹೋ ವಾ ವೃಕೋ ವಾ ವರಾಹೋ ವಾ ದಂಶೋ ವಾ ಮಶಕೋ ವಾ ಯದ್ಭದ್ಭವನ್ತಿ ತದಾಭವನ್ತಿ' (ಛಾಂ.ಉ.೬-೯-೩) ಇತಿ ।।'ತಥಾ ಸುಷುಪ್ತಂ ಜೀವಮ್ - 'ಪ್ರಾಜ್ಞೇನಾಽಽತ್ಮನಾ ಸಮ್ಪರಿಷ್ವಕ್ತಃ’ (ಬೃ.ಉ. ೬-೩-೨೧) ಇತಿ ಚ ವದತಿ । ತಸ್ಮಾತ್, ಸಚ್ಛಬ್ದವಾಚ್ಯಃ ಪರಂ ಬ್ರಹ್ಮ, ಸರ್ವಜ್ಞಃ ಪರಮೇಶ್ವರಃ ಪುರುಷೋತ್ತಮ ಏವ । ತದಾಹವೃತ್ತಿಕಾರಃ - 'ಸತಾ ಸೋಮ್ಯ ತದಾ ಸಮ್ಪನ್ನೋ ಭವತೀತಿ ಸಂಪತ್ಯಸಂಪತ್ತಿಭ್ಯಾಮ್ ಏತದಧ್ಯವಸೀಯತೇ । 'ಪ್ರಾಜ್ಞೇನಾಽಽತ್ಮನಾ ಸಮ್ಪರಿಷ್ವಕ್ತಃ’ ಇತಿ ಚಾಹ' (ಬೋ. ವೃ.) ಇತಿ ।।",
-      number: 10,
     },
-  },
-  {
-    english:
-      "This scriptural passage, namely, -'Know from me, my dear child, what deep sleep is. When any person is known to be asleep, he is then in union with the Sat. He withdraws into his own cause.  Therefore they say, he sleeps, because he is absorbed into his own cause (i.e. into the Brahman),'-[Chhānd. Up. VI. 8. i.] - relates to that very subject which is denoted by the word Sat. It declares that the individual soul, who is asleep and is in union with the Sat, has withdrawn (himself) into his own cause; that is, that he has been absorbed into his own cause. And (the) dissolution (of a thing) is (its) absorption into (its) own cause.  Moreover the non-intelligent pradhānadoes not deserve to become the cause of the individual soul. The meaning of the scriptural statement -'He withdraws into his own cause,' - [Chhānd. Up. VI. 8. i.], is that the individual soul goes back only unto the SupremeSelf. It is declared in the scriptural passage351 relating to the differentiation of names and forms that that Brahman Himself, who has the intelligent thing (or the individual soul) for His body and forms its Self, is denoted by the word jīva (which ordinarily means the individual soul). By means of the statement' - He is then in union with the Sat; He withdraws into his own cause.' [Chhānd. Up. VI. 8. i.] - it is taught that that Brahman who is denoted by the word jīva is free from (any) association with names and forms at the time of deep sleep also, as (He is) at the time of universal dissolution; and (He) is hence to be denoted merely by the word Sat (or Existence). To the same effect it is stated in similar contexts (elsewhere) that, owing to his (i. e. the individual self's) not being associated with names and forms, he is embraced by Him who is omniscient; and consequently it is said that,  'When he is embraced by the omniscient Self, he does not know anything that is external nor anything that is internal.' [Bṛih. Up. IV. 3. 21.]. Indeed, untilfinal release takes place, the individual self is associated with names and forms; and it is, therefore, that there is born (in him) the knowledge of objects other than himself.  At the time of deep sleep he certainly gives upnames and forms, and is embraced by the Sat (i. e. by the Brahman):- and again, in the wakeful state, he becomes associated with names and forms and assumes (for himself) a particular name and a particular form. This is clearlystated in other scriptural passages, namely, 'When he (i. e. the individual self) is asleep, he sees no dreams whatsoever; and he becomes one wholly with that Prāṇa (or Brahman] ………………………  From that Self, the prānās proceed each towards its (own,) place.'-[Kaush. Up. IV. 19.].  To the same effect is the following scriptural passage also -'Whatever these beings are here, (i. e. in the state of separation from their cause), whether a tiger, or a lion, or a wolf, or a boar, ……….352 or a fly, or a mosquito,  - that they become again and again.'  [Chhānd. Up. VI. 9. 2. & VI. 10. 2.]. And a similar scriptural text also says that the individual soul who is so in deep sleep 'is embraced by the omniscient Self.'  [Bṛih. Up. IV. 3. 21.]. Therefore, He who is denoted by the word Sat (in the scriptural passage under discussion), is that Highest Person alone who is the Highest Brahman, who is omniscient and is the Highest Lord. The Vṛittikāra (Bodhāyana) says the same thing thus:- 'In the scriptural text -'Then he is in union with the Sat.' this (viz. the fact that the Sat is the Brahman who is the cause of the world) is conclusively made outby means of (the creatures) withdrawing (into the Sat) and returning (from the Sat); and the scripture also says that 'He (the individual self) is  embraced by the omniscient Self.",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 10. Svāpyayāt.\r",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 10,
   },
   {
     kannada: {
       preSutra: "ಇತಶ್ಚ, ನ ಪ್ರಧಾನಮ್ -",
       sutra: "ಗತಿಸಾಮಾನ್ಯಾತ್‌ || ೧-೧-೧೧ ||",
-      text: "'ಆತ್ಮಾ ವಾ ಇದಮೇಕ ಏವಾಗ್ರ ಆಸೀತ್ ನಾನ್ಯತ್ ಕಿಞ್ಚನ ಮಿಷತ್ | ಸ ಈಕ್ಷತ ಲೋಕಾನ್ನು ಸೃಜಾ ಇತಿ' | (ಐತ.ಉ.೧-೧) 'ಸ ಇಮಾಂಲ್ಲೋಕಾನಸೃಜತ' (ಐತ.ಉ.೧-೨) 'ಸಂಭೂತಃ ಆತ್ಮನ ಆಕಾಶಃ ಸಂಭೂತಃ | ಆಕಾಶಾದ್ವಾಯುಃ । ವಾಯೋರಗ್ನಿ: ಅಸ್ಯ ಅಗ್ನೇರಾಪಃ | ಅದ್ಭ್ಯಃ ಪೃಥಿವೀ | (ತೈ.ಉ.ಆನ೧-೨) 'ಅಸ್ಯ ಮಹತೋ ಭೂತಸ್ಯ ನಿಃಶ್ವಸಿತಮೇತತ್, ಯತ್ ಋಗ್ವೇದಃ' (ಸುಬಾ.ಉ.೨) ಇತ್ಯಾದಿಸೃಷ್ಟಿವಾಕ್ಯಾನಾಂ ಯಾ ಗತಿಃ – ಪ್ರವೃತ್ತಿಃ, ತತ್ಸಾಮಾನ್ಯಾತ್ - ತತ್ಸಮಾನಾರ್ಥತ್ವಾದಸ್ಯ | ತೇಷು ಚ ಸರ್ವೇಷು, ಸರ್ವೇಶ್ವರಃ ಕಾರಣಮವಗಮ್ಯತೇ | ತಸ್ಮಾತ್ ಅತ್ರಾಪಿ ಸರ್ವೇಶ್ವರ ಏವ ಕಾರಣಮಿತಿ ನಿಶ್ಚೀಯತೇ ||",
-      number: 11,
+      text: "ಆತ್ಮಾ ವಾ ಇದಮೇಕ ಏವಾಗ್ರ ಆಸೀತ್ ನಾನ್ಯತ್ ಕಿಞ್ಚನ ಮಿಷತ್ | ಸ ಈಕ್ಷತ ಲೋಕಾನ್ನು ಸೃಜಾ ಇತಿ' | (ಐತ.ಉ.೧-೧) 'ಸ ಇಮಾಂಲ್ಲೋಕಾನಸೃಜತ' (ಐತ.ಉ.೧-೨) 'ಸಂಭೂತಃ ಆತ್ಮನ ಆಕಾಶಃ ಸಂಭೂತಃ | ಆಕಾಶಾದ್ವಾಯುಃ । ವಾಯೋರಗ್ನಿ: ಅಸ್ಯ ಅಗ್ನೇರಾಪಃ | ಅದ್ಭ್ಯಃ ಪೃಥಿವೀ | (ತೈ.ಉ.ಆನ೧-೨) 'ಅಸ್ಯ ಮಹತೋ ಭೂತಸ್ಯ ನಿಃಶ್ವಸಿತಮೇತತ್, ಯತ್ ಋಗ್ವೇದಃ' (ಸುಬಾ.ಉ.೨) ಇತ್ಯಾದಿಸೃಷ್ಟಿವಾಕ್ಯಾನಾಂ ಯಾ ಗತಿಃ – ಪ್ರವೃತ್ತಿಃ, ತತ್ಸಾಮಾನ್ಯಾತ್ - ತತ್ಸಮಾನಾರ್ಥತ್ವಾದಸ್ಯ | ತೇಷು ಚ ಸರ್ವೇಷು, ಸರ್ವೇಶ್ವರಃ ಕಾರಣಮವಗಮ್ಯತೇ | ತಸ್ಮಾತ್ ಅತ್ರಾಪಿ ಸರ್ವೇಶ್ವರ ಏವ ಕಾರಣಮಿತಿ ನಿಶ್ಚೀಯತೇ ||",
     },
-  },
-  {
-    english:
-      "Because there has to be a similarity of import (between the passage under reference and the other passages relating to the cause of the creation, &c., of the world).Whatever is the import of the following among other passages relating to the creation of the world, namely, - 'The Self, indeed, this one only was in the beginning. Nothing else lived.353  He thought -'May I create the worlds.' He created these worlds.'-  [Ait. Up. I. i & 2.]; 'From that same Self, indeed, the spatial ether came into existence, from the spatial ether the air (came into existence); from the air, the fire; from the fire, the waters; and from the waters, the earth.' [Taitt. Up. II. i. i.]; 'That which is this Rigveda is the breath of Him, that is, of this Great Being.'- [Sub. Up. II.]-354  (whatever) is (their) signification, from the similarity (of import) with that, that is, from the sameness of meaning (which) this (passage under reference) is to have with that (signification) (it has to be inferred that the pradhāna is not the Sat). In all these (above passages) also, the Lord of all is made out to be the cause (of the world). Therefore here (i. e. in this passage) also it is definitely determined that the Lord of all is alone the cause (of the world).",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 11. Gatisāmanyāt.",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 11,
   },
   {
     kannada: {
       preSutra: "ಇತಶ್ಚ, ನ ಪ್ರಧಾನಮ್ -",
       sutra: "ಶ್ರುತತ್ವಾಚ್ಚ || ೧-೧-೧೨ ||",
-      text: "'ಶ್ರುತಮೇವ ಹಿ ಅಸ್ಯಾಮ್ ಉಪನಿಷದಿ-ಅಸ್ಯ ಸಚ್ಛಬ್ದವಾಚ್ಯಸ್ಯ, ಆತ್ಮತ್ವೇನ ನಾಮ- ರೂಪಯೋರ್ವ್ಯಾಕರ್ತೃತ್ವಂ, ಸರ್ವಜ್ಞತ್ವಂ, ಸರ್ವಶಕ್ತಿತ್ವಂ, ಸರ್ವಾಧಾರತ್ವಮ್, ಅಪಹತಪಾಪ್ಮತ್ವಾದಿಕಂ, ಸತ್ಯಕಾಮತ್ವಂ, ಸತ್ಯಸಙ್ಕಲ್ಪತ್ವಂ ಚ; 'ಅನೇನ ಜೀವೇನಾಽಽತ್ಮನಾಽನುಪ್ರವಿಶ್ಯ ನಾಮರೂಪೇ ವ್ಯಾಕರವಾಣಿ' (ಛಾಂ.ಉ.೬-೩-೨) 'ಸನ್ಮೂಲಾಃ ಸೋಮ್ಯೇಮಾಃ ಸರ್ವಾ: ಪ್ರಜಾಃ ಸದಾಯತನಾಃ ಸತ್ಪ್ರತಿಷ್ಠಾಃ, (ಛಾಂ.ಉ.೬-೮-೬) 'ಐತದಾತ್ಮ್ಯಮಿದಂ ಸರ್ವಂ ತತ್ಸತ್ಯಂ ಸ ಆತ್ಮಾ' (ಛಾಂ.ಉ.೬-೮-೭) 'ಯಚ್ಚಾಸ್ಯೇಹಾಽಸ್ತಿ ಯಚ್ಚ ನಾಽಸ್ತಿ, ಸರ್ವಮ್ ತದಸ್ಮಿನ್ ಸಮಾಹಿತಮ್' (ಛಾಂ.ಉ.೮-೧-೩) 'ಅಸ್ಮಿನ್ ಕಾಮಾಃ ಸಮಾಹಿತಾಃ' (ಛಾಂ.ಉ.೮-೧-೫) 'ಏಷ ಆತ್ಮಾಽಪಹತಪಾಪ್ಮಾ ವಿಜರೋ ವಿಮೃತ್ಯುರ್ವಿಶೋಕಃ ವಿಜಿಘತ್ಸೋsಪಿಪಾಸಃ ಸತ್ಯಕಾಮಃ ಸತ್ಯಸಂಕಲ್ಪಃ' (ಛಾಂ.ಉ.೮-೧೫) ಇತಿ ||\n\n ತಥಾ ಚ ಶ್ರುತ್ಯಂತರಾಣಿ - 'ನ ತಸ್ಯ ಕಶ್ಚಿತ್ ಪತಿರಸ್ತಿ ಲೋಕೇ ನ ಚೇಶಿತಾ ನೈವ ಚ ತಸ್ಯ ಲಿಙ್ಗಮ್ । ಸ ಕಾರಣಂ ಕರಣಾಧಿಪಾಧಿಪೋ ನ ಚಾಽಸ್ಯ ಕಶ್ಚಿಜ್ಜನಿತಾ ನ ಚಾಽಧಿಪಃ' ॥ (ಶ್ವೇ.ಉ.೬-೯) 'ಸರ್ವಾಣಿ ರೂಪಾಣಿ ವಿಚಿತ್ರ ಧೀರೋ ನಾಮಾನಿ ಕೃತ್ವಾsಭಿವದನ್ ಯದಾssಸ್ತೇ' (ತೈ.ಆರ.ಪು.೩-೧೨-೧೬) 'ಅನ್ತಃಪ್ರವಿಷ್ಟಃ ಶಾಸ್ತಾ ಜನಾನಾಂ ಸರ್ವಾತ್ಮಾ' (ತೈ.ಆರ.೩-೧೧-೩) 'ವಿಶ್ವಾತ್ಮಾನಂ ಪರಾಯಣಮ್' (ತೈ.ನಾ.ಉ.೧೧-೩) 'ಪತಿಂ ವಿಶ್ವಸ್ಯಾತ್ವೇಶ್ವರಮ್' (ತೈ.ನಾ.ಉ.೧೧-೩) 'ಯಚ್ಚ ಕಿಞ್ಚಿಜ್ಜಗತ್ಯಸ್ಮಿನ್ ದೃಶ್ಯತೇ ಶೂಯತೇSಪಿ ವಾ । ಅನ್ತರ್ಬಹಿಶ್ಚ ತತ್ಸರ್ವಂ ವ್ಯಾಪ್ಯ ನಾರಾಯಣಃ ಸ್ಥಿತಃ' ॥ (ತೈ.ನಾ.ಉ.೧೧-೫) 'ಏಷ ಸರ್ವಭೂತಾನ್ತರಾತ್ಮಾಪಹತಪಾಪ್ಮಾ ದಿವ್ಯೋ ದೇವ ಏಕೋ ನಾರಾಯಣಃ' (ಸುಬಾ.ಉ. ೭) ಇತ್ಯಾದೀನಿ ।। ತಸ್ಮಾತ್ - ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯಂ ನ ಪ್ರಧಾನಾದಿಪ್ರತಿಪಾದನಯೋಗ್ಯಮ್ । ಅತಃ ಸರ್ವಜ್ಞಃ ಸರ್ವಶಕ್ತಿಃ ಸರ್ವೇಶ್ವರೇಶ್ವರಃ ನಿರಸ್ತನಿಖಿಲದೋಷಗನ್ಧಃ ಅನವಧಿಕಾತಿಶಯಾಸಂಖ್ಯೆಯಕಲ್ಯಾಣಗುಣಗಣೌಘ- ಮಹಾರ್ಣವಃ ಪುರುಷೋತ್ತಮಃ ನಾರಾಯಣ ಏವ, ನಿಖಿಲಜಗದೇಕಕಾರಣಂ ಜಿಜ್ಞಾಸ್ಯಂ ಬ್ರಹ್ಮ ಇತಿ ಸ್ಥಿತಮ್ ||ಆತ ವಿವ, ನಿರ್ವಿಶೇಷಚಿನ್ಮಾತ್ರಬ್ರಹ್ಮವಾದೋSಪಿ, ಸೂತ್ರಕಾರೇಣ, ಅಭಿಃ ಶ್ರುತಿಭಿಃ ನಿರಸ್ತೋ ವೇದಿತವ್ಯಃ: 'ಪಾರಮಾರ್ಥಿಕಮುಖೇಕ್ಷಣಾದಿಗುಣಯೋಗಿ ಜಿಜ್ಞಾಸ್ಯಂ ಬ್ರಹ್ಮ' ಇತಿ ಸ್ಥಾಪನಾತ್ । ನಿರ್ವಿಶೇಷವಾದೇ ಹಿ ಸಾಕ್ಷಿತ್ವಮಪಿ ಅಪಾರಮಾರ್ಥಿಕಮ್ । ವೇದಾಂತವೇದ್ಯಂ ಬ್ರಹ್ಮ ಜಿಜ್ಞಾಸ್ಯತಯಾ ಪ್ರತಿಜ್ಞಾತಮ್; ತಚ್ಚ ಚೇತನಮ್ ಇತಿ 'ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್' ಇತ್ಯಾದಿಭಿಃ ಸೂತ್ರೈಃ ಪ್ರತಿಪಾದ್ಯತೇ । ಚೇತನತ್ವಂ ನಾಮ ಚೈತನ್ಯಗುಣಯಗ ಅತಃ ಈಕ್ಷಣಗುಣವಿರಹಿಣಃ ಪ್ರಧಾನತುಲ್ಯತ್ವಮೇವ ।। ಕಿಂಚ - ನಿರ್ವಿಶೇಷಪ್ರಕಾಶಮಾತ್ರಬ್ರಹ್ಮವಾದೇ, ತಸ್ಯ ಪ್ರಕಾಶತ್ವಮಸಿ ದುರುಪಪಾದಮ್ | ಪ್ರಕಾಶೋ ಹಿ ನಾಮ ಸ್ವಸ್ಯ ಪರಸ್ಯ ಚ ವ್ಯವಹಾರಯೋಗ್ಯತಾಮಾಪಾದಯನ್ ವಸ್ತು ವಿಶೇಷಃ | ನಿರ್ವಿಶೇಷಸ್ಯ ವಸ್ತುನಃ ತದುಭಯರೂಪತ್ವಾಭಾವಾತ್ ಘಟಾದಿವತ್ ಅಚಿತ್ತ್ವಮೇವ । ತದುಭಯರೂಪತ್ವಾಭಾವೇsಪಿ ತತ್ಕ್ಷಮತ್ವಮಸ್ತಿ - ಇತಿ ಚೇತ್, ತನ; ತತ್ಸಮತ್ವಂ ಹಿ ತತ್ಸಾಮರ್ಥ್ಯಮೇವ | ಸಾಮರ್ಥ್ಯಗುಣಯೋಗೇ ಹಿ ನಿರ್ವಿಶೇಷವಾದಃ ಪರಿತ್ಯಕ್ತಃ ಸ್ಯಾತ್ ।। ಅಥ - ಶ್ರುತಿಪ್ರಾಮಾಣ್ಯಾತ್ ಅಯಮೇಕೋ ವಿಶೇಷಃ ಅಭ್ಯುಪಗಮ್ಯತೇ - ಇತಿ ಚೇತ್, ಹನ್ತತರ್ಹಿ! ತತ ಏವ ಸರ್ವಜ್ಞತಾ, ಸರ್ವಶಕ್ತಿತ್ವಮ್, ಸರ್ವೇಶ್ವರೇಶ್ವರತ್ವಮ್, ಸರ್ವಕಲ್ಯಾಣಗುಣಾಕರತ್ವಮ್, ಸಕಲಹೇಯಪ್ರತ್ಯನೀಕತಾ ಇತ್ಯಾದಯಃ ಸರ್ವೇ ಅಭ್ಯುಪಗನ್ತವ್ಯಾಃ | ಶಕ್ತಿಮತ್ವಂ ಚ ಕಾರ್ಯ- ವಿಶೇಷಾನುಗುಣತ್ವಮ್ | ತಚ್ಚ ಕಾರ್ಯವಿಶೇಷೈಕನಿರೂಪಣೀಯಮ್ | ಕಾರ್ಯವಿಶೇಷಸ್ಯ ನಿಷ್ಪ್ರಮಾಣಕತ್ವೇ ತದೇಕನಿರೂಪಣೀಯಂ ಶಕ್ತಿಮತ್ವಮಪಿ ನಿಷ್ಟ್ರಮಾಣಕಂ ಸ್ಯಾತ್ ||ಕಿಞ್ಚ-ನಿರ್ವಿಶೇಷವಸ್ತುವಾದಿನಃ ವಸ್ತುತ್ವಮಪಿ ನಿಷ್ಪ್ರಮಾಣಮ್ । ಪ್ರತ್ಯಕ್ಷಾನುಮಾನಾಗಮ- ಸ್ವಾನುಭವಾಃ ಸವಿಶೇಷಗೋಚರಾಃ - ಇತಿ ಪೂರ್ವಮೇವೋಕ್ತಮ್ । ತಸ್ಮಾತ್ ವಿಚಿತ್ರಚೇತನಾಚೇತನಾತ್ಮಕ ಜಗದ್ರೂಪೇಣ ಬಹು ಸ್ಯಾಮ್ ಇತಿ ಈಕ್ಷಣಕ್ಷಮಃ, ಪುರುಷೋತ್ತಮ ಏವ ಜಿಜ್ಞಾಸ್ಯಃ - ಇತಿ ಸಿದ್ಧಮ್ ।।",
-      number: 12,
+      text: "ಶ್ರುತಮೇವ ಹಿ ಅಸ್ಯಾಮ್ ಉಪನಿಷದಿ-ಅಸ್ಯ ಸಚ್ಛಬ್ದವಾಚ್ಯಸ್ಯ, ಆತ್ಮತ್ವೇನ ನಾಮ- ರೂಪಯೋರ್ವ್ಯಾಕರ್ತೃತ್ವಂ, ಸರ್ವಜ್ಞತ್ವಂ, ಸರ್ವಶಕ್ತಿತ್ವಂ, ಸರ್ವಾಧಾರತ್ವಮ್, ಅಪಹತಪಾಪ್ಮತ್ವಾದಿಕಂ, ಸತ್ಯಕಾಮತ್ವಂ, ಸತ್ಯಸಙ್ಕಲ್ಪತ್ವಂ ಚ; 'ಅನೇನ ಜೀವೇನಾಽಽತ್ಮನಾಽನುಪ್ರವಿಶ್ಯ ನಾಮರೂಪೇ ವ್ಯಾಕರವಾಣಿ' (ಛಾಂ.ಉ.೬-೩-೨) 'ಸನ್ಮೂಲಾಃ ಸೋಮ್ಯೇಮಾಃ ಸರ್ವಾ: ಪ್ರಜಾಃ ಸದಾಯತನಾಃ ಸತ್ಪ್ರತಿಷ್ಠಾಃ, (ಛಾಂ.ಉ.೬-೮-೬) 'ಐತದಾತ್ಮ್ಯಮಿದಂ ಸರ್ವಂ ತತ್ಸತ್ಯಂ ಸ ಆತ್ಮಾ' (ಛಾಂ.ಉ.೬-೮-೭) 'ಯಚ್ಚಾಸ್ಯೇಹಾಽಸ್ತಿ ಯಚ್ಚ ನಾಽಸ್ತಿ, ಸರ್ವಮ್ ತದಸ್ಮಿನ್ ಸಮಾಹಿತಮ್' (ಛಾಂ.ಉ.೮-೧-೩) 'ಅಸ್ಮಿನ್ ಕಾಮಾಃ ಸಮಾಹಿತಾಃ' (ಛಾಂ.ಉ.೮-೧-೫) 'ಏಷ ಆತ್ಮಾಽಪಹತಪಾಪ್ಮಾ ವಿಜರೋ ವಿಮೃತ್ಯುರ್ವಿಶೋಕಃ ವಿಜಿಘತ್ಸೋsಪಿಪಾಸಃ ಸತ್ಯಕಾಮಃ ಸತ್ಯಸಂಕಲ್ಪಃ' (ಛಾಂ.ಉ.೮-೧೫) ಇತಿ ||\n\n ತಥಾ ಚ ಶ್ರುತ್ಯಂತರಾಣಿ - 'ನ ತಸ್ಯ ಕಶ್ಚಿತ್ ಪತಿರಸ್ತಿ ಲೋಕೇ ನ ಚೇಶಿತಾ ನೈವ ಚ ತಸ್ಯ ಲಿಙ್ಗಮ್ । ಸ ಕಾರಣಂ ಕರಣಾಧಿಪಾಧಿಪೋ ನ ಚಾಽಸ್ಯ ಕಶ್ಚಿಜ್ಜನಿತಾ ನ ಚಾಽಧಿಪಃ' ॥ (ಶ್ವೇ.ಉ.೬-೯) 'ಸರ್ವಾಣಿ ರೂಪಾಣಿ ವಿಚಿತ್ರ ಧೀರೋ ನಾಮಾನಿ ಕೃತ್ವಾsಭಿವದನ್ ಯದಾssಸ್ತೇ' (ತೈ.ಆರ.ಪು.೩-೧೨-೧೬) 'ಅನ್ತಃಪ್ರವಿಷ್ಟಃ ಶಾಸ್ತಾ ಜನಾನಾಂ ಸರ್ವಾತ್ಮಾ' (ತೈ.ಆರ.೩-೧೧-೩) 'ವಿಶ್ವಾತ್ಮಾನಂ ಪರಾಯಣಮ್' (ತೈ.ನಾ.ಉ.೧೧-೩) 'ಪತಿಂ ವಿಶ್ವಸ್ಯಾತ್ವೇಶ್ವರಮ್' (ತೈ.ನಾ.ಉ.೧೧-೩) 'ಯಚ್ಚ ಕಿಞ್ಚಿಜ್ಜಗತ್ಯಸ್ಮಿನ್ ದೃಶ್ಯತೇ ಶೂಯತೇSಪಿ ವಾ । ಅನ್ತರ್ಬಹಿಶ್ಚ ತತ್ಸರ್ವಂ ವ್ಯಾಪ್ಯ ನಾರಾಯಣಃ ಸ್ಥಿತಃ' ॥ (ತೈ.ನಾ.ಉ.೧೧-೫) 'ಏಷ ಸರ್ವಭೂತಾನ್ತರಾತ್ಮಾಪಹತಪಾಪ್ಮಾ ದಿವ್ಯೋ ದೇವ ಏಕೋ ನಾರಾಯಣಃ' (ಸುಬಾ.ಉ. ೭) ಇತ್ಯಾದೀನಿ ।। ತಸ್ಮಾತ್ - ಜಗತ್ಕಾರಣವಾದಿವಾಕ್ಯಂ ನ ಪ್ರಧಾನಾದಿಪ್ರತಿಪಾದನಯೋಗ್ಯಮ್ । ಅತಃ ಸರ್ವಜ್ಞಃ ಸರ್ವಶಕ್ತಿಃ ಸರ್ವೇಶ್ವರೇಶ್ವರಃ ನಿರಸ್ತನಿಖಿಲದೋಷಗನ್ಧಃ ಅನವಧಿಕಾತಿಶಯಾಸಂಖ್ಯೆಯಕಲ್ಯಾಣಗುಣಗಣೌಘ- ಮಹಾರ್ಣವಃ ಪುರುಷೋತ್ತಮಃ ನಾರಾಯಣ ಏವ, ನಿಖಿಲಜಗದೇಕಕಾರಣಂ ಜಿಜ್ಞಾಸ್ಯಂ ಬ್ರಹ್ಮ ಇತಿ ಸ್ಥಿತಮ್ ||ಆತ ವಿವ, ನಿರ್ವಿಶೇಷಚಿನ್ಮಾತ್ರಬ್ರಹ್ಮವಾದೋSಪಿ, ಸೂತ್ರಕಾರೇಣ, ಅಭಿಃ ಶ್ರುತಿಭಿಃ ನಿರಸ್ತೋ ವೇದಿತವ್ಯಃ: 'ಪಾರಮಾರ್ಥಿಕಮುಖೇಕ್ಷಣಾದಿಗುಣಯೋಗಿ ಜಿಜ್ಞಾಸ್ಯಂ ಬ್ರಹ್ಮ' ಇತಿ ಸ್ಥಾಪನಾತ್ । ನಿರ್ವಿಶೇಷವಾದೇ ಹಿ ಸಾಕ್ಷಿತ್ವಮಪಿ ಅಪಾರಮಾರ್ಥಿಕಮ್ । ವೇದಾಂತವೇದ್ಯಂ ಬ್ರಹ್ಮ ಜಿಜ್ಞಾಸ್ಯತಯಾ ಪ್ರತಿಜ್ಞಾತಮ್; ತಚ್ಚ ಚೇತನಮ್ ಇತಿ 'ಈಕ್ಷತೇರ್ನಾಶಬ್ದಮ್' ಇತ್ಯಾದಿಭಿಃ ಸೂತ್ರೈಃ ಪ್ರತಿಪಾದ್ಯತೇ । ಚೇತನತ್ವಂ ನಾಮ ಚೈತನ್ಯಗುಣಯಗ ಅತಃ ಈಕ್ಷಣಗುಣವಿರಹಿಣಃ ಪ್ರಧಾನತುಲ್ಯತ್ವಮೇವ ।। ಕಿಂಚ - ನಿರ್ವಿಶೇಷಪ್ರಕಾಶಮಾತ್ರಬ್ರಹ್ಮವಾದೇ, ತಸ್ಯ ಪ್ರಕಾಶತ್ವಮಸಿ ದುರುಪಪಾದಮ್ | ಪ್ರಕಾಶೋ ಹಿ ನಾಮ ಸ್ವಸ್ಯ ಪರಸ್ಯ ಚ ವ್ಯವಹಾರಯೋಗ್ಯತಾಮಾಪಾದಯನ್ ವಸ್ತು ವಿಶೇಷಃ | ನಿರ್ವಿಶೇಷಸ್ಯ ವಸ್ತುನಃ ತದುಭಯರೂಪತ್ವಾಭಾವಾತ್ ಘಟಾದಿವತ್ ಅಚಿತ್ತ್ವಮೇವ । ತದುಭಯರೂಪತ್ವಾಭಾವೇsಪಿ ತತ್ಕ್ಷಮತ್ವಮಸ್ತಿ - ಇತಿ ಚೇತ್, ತನ; ತತ್ಸಮತ್ವಂ ಹಿ ತತ್ಸಾಮರ್ಥ್ಯಮೇವ | ಸಾಮರ್ಥ್ಯಗುಣಯೋಗೇ ಹಿ ನಿರ್ವಿಶೇಷವಾದಃ ಪರಿತ್ಯಕ್ತಃ ಸ್ಯಾತ್ ।। ಅಥ - ಶ್ರುತಿಪ್ರಾಮಾಣ್ಯಾತ್ ಅಯಮೇಕೋ ವಿಶೇಷಃ ಅಭ್ಯುಪಗಮ್ಯತೇ - ಇತಿ ಚೇತ್, ಹನ್ತತರ್ಹಿ! ತತ ಏವ ಸರ್ವಜ್ಞತಾ, ಸರ್ವಶಕ್ತಿತ್ವಮ್, ಸರ್ವೇಶ್ವರೇಶ್ವರತ್ವಮ್, ಸರ್ವಕಲ್ಯಾಣಗುಣಾಕರತ್ವಮ್, ಸಕಲಹೇಯಪ್ರತ್ಯನೀಕತಾ ಇತ್ಯಾದಯಃ ಸರ್ವೇ ಅಭ್ಯುಪಗನ್ತವ್ಯಾಃ | ಶಕ್ತಿಮತ್ವಂ ಚ ಕಾರ್ಯ- ವಿಶೇಷಾನುಗುಣತ್ವಮ್ | ತಚ್ಚ ಕಾರ್ಯವಿಶೇಷೈಕನಿರೂಪಣೀಯಮ್ | ಕಾರ್ಯವಿಶೇಷಸ್ಯ ನಿಷ್ಪ್ರಮಾಣಕತ್ವೇ ತದೇಕನಿರೂಪಣೀಯಂ ಶಕ್ತಿಮತ್ವಮಪಿ ನಿಷ್ಟ್ರಮಾಣಕಂ ಸ್ಯಾತ್ ||ಕಿಞ್ಚ-ನಿರ್ವಿಶೇಷವಸ್ತುವಾದಿನಃ ವಸ್ತುತ್ವಮಪಿ ನಿಷ್ಪ್ರಮಾಣಮ್ । ಪ್ರತ್ಯಕ್ಷಾನುಮಾನಾಗಮ- ಸ್ವಾನುಭವಾಃ ಸವಿಶೇಷಗೋಚರಾಃ - ಇತಿ ಪೂರ್ವಮೇವೋಕ್ತಮ್ । ತಸ್ಮಾತ್ ವಿಚಿತ್ರಚೇತನಾಚೇತನಾತ್ಮಕ ಜಗದ್ರೂಪೇಣ ಬಹು ಸ್ಯಾಮ್ ಇತಿ ಈಕ್ಷಣಕ್ಷಮಃ, ಪುರುಷೋತ್ತಮ ಏವ ಜಿಜ್ಞಾಸ್ಯಃ - ಇತಿ ಸಿದ್ಧಮ್ ।।",
     },
-  },
-  {
-    english:
-      "Because also it is revealed (in the very Upanishad in which the passage under discussion occurs, and in other Upanishads, that the Supreme Self is the cause of the universe).Indeed, in this very Upanishad (viz. the Chhāndogya}, in the following passages, namely,- 'Entering in along with this individual self which is (also) the same as Myself, I evolve the differentiation of names and forms.'-  [Chhānd, Up. VI. 3. 2.], ' All these things which are born, my dear one, have their origin in the Sat (i. e. in the One Existence), have their abode in the Sat, and are established in the Sat.' - [Chhānd. Up. VI. 8. 4 & 6.], 'All this has this (Brahman} for its Self. That (Brahman) is Existence.  He is the Self.' [Chhānd. Up. VI. 8. 7.], 'Whatever there is here as existent and whatever there is as non-existent in relation to him, - all that is contained in Him.' -[Chhānd. Up. VIII. i. 3.], 'In Him, all desires are contained.'-  [Chhānd. Up. VIII. i. 5.], 'This Self is devoid of sin, is free from old age, free from death, free from sorrow,free from hunger, free from thirst, and desires the truth, and wills the truth.'  - [Chhānd. Up. VIII. i. 5. & VIII. 7. i & 3.] it is declared that that, which is denoted by the word Sat, is, in consequence of its possessing the same character as the Self, capable of causing the differentiation of names and forms and possesses (the quality of) omniscience, (the quality of) omnipotence, the quality of being the support of all, the quality of being devoid of sin, &c., the quality of desiring the truth, and also the quality of willing the truth. To the same effect are the following and other scriptural passages found elsewhere also:-  'He has none as His lord and (none) as His ruler in the world; and He has no characteristic body whatsoever. He is the cause and is the Lord of what is the lord of the senses (i. e. of the jīva or the individual soul); He has no progenitor and no superior.'- [Svet. Up. VI. 9.]; 'The omniscient Lord who creates all beings gives them names, and, calling them (by those names), He ever continues to be.' Taitt. Ār. III. 12. 7.]; 'He,who has entered within, is the ruler of all things that are born, and is the Self of all.' [Taitt. Ār. III. 24.]; 'He is the Self of the whole universe and is the best refuge; He is the Lord of the world, the Lord of the individual souls ; whatever thing there is in this world, either seen or heard, Narayana pervades all that within and without and so remains for ever'. - [M. Nār. XI. 3 5.]; 'He is the internal Self of all beings, He is devoid of all sins, He is the Divine Lord, He is the one Narayana.' [Sub. Up. VII. i.].   Therefore the scriptural passage which mentions the cause of the world is not capable of importing (as such) the pradhāna and other similar things.  Consequently it is settled that that Narayana alone who is omniscient and omnipotent, who is the Lord of all lords, who is devoid of even the smallest taint of all that is evil, who is the great ocean that receives the flood of all the collections of (all) the innumerable auspicious qualities which are unsurpassed in excellence, who is the Highest Person, He alone forms the one cause of the universe and is the Brahman that has to be enquired into. For the same reason it has to be understood that the contention, which maintains that the Brahman is pure intelligence devoid of characterising attributes, has also been set at naught by the Sūtrakāra with the help of these(above quoted) scriptural passages; because it is established (by him) that that Brahman, who is to be enquired into, is associated with the real attribute of 'seeing', &c., which forms the main and natural significance of the root īksh, (to 'see'). Indeed, according to the contention which maintains that that (which is the cause of the world) is devoid of characterising attributes, even the character of a witness (i. e. of one who 'sees') has to be unreal (as applied to that cause). That the Brahman, who is to be made out from the Vedānta, has been enunciated to be the object of the enquiry (here), and that He is intelligent, are (both) declared by means of this aphorism among others; namely, 'Because the activity imported by the root īksh (to see i.e. to think] is predicated (in relation to what constitutes the cause of the world), that which is not revealed solely by the scripture (viz. the pradhāna), is not (the Sat or the Existence which is referred to in the scriptural passage relating to that cause of the world).' [Ved. Sūt. I. i. 5.]. To possess the character of an intelligent being is known to be the same as to possess the quality of intelligence.  And accordingly that which is devoid of the attribute of 'seeing' (or thinking) has exactly the same nature as the pradhāna.Moreover, according to the position which maintains that the Brahman is pure luminosity devoid of characterising attributes, it is difficult even to establish that He is (such) luminosity. Luminosity (or intelligence) is indeed known to be that particular thing which is capable of making itself and other things fit to be realised (by the mind). The thing which is devoid of attributes does not possess both these characteristics, and it certainly has in consequence the character of a non-intelligent thing like a pot or any other similar object. If it be said that, even though it does not possess both these characteristics, it is as good as if it had them, it is replied that it cannot be so. To be as good as if it had them is indeed nothing other than (for it) to be able to do what they are capable of doing. On admitting the possession (by the Brahman) of the quality corresponding to this capability, the position which maintains the attributelessness (of the Brahman) will indeed amount to have been given up.  Again, if it be urged that, on the authority of the scripture, this one particular characteristic quality (of capability) has to be admitted, then indeed, for that same reason, omniscience, omnipotence, the quality ofbeing the Lord of all lords, the quality of being the abode of all auspicious attributes, the quality of being hostile to all that is evil, and all other similar qualities will have to be admitted. Again, to possess a capability is the sameas to be able to produce a particular effect; and that (possession of the capability) has to be definitely determined solely by means of (its) produced effect. When (such) a particular produced effect is incapable of being proved,then the possession of that capability, which has to be definitely determined solely by means of that (effect), becomes also incapable of proof.Further, according to him who maintains (the Brahman to be) an attributeless entity, it is impossible to prove (that the Brahman possesses) the character of being a thing at all; for, it has been already355 pointed out that perception, inference, revelation, and one's own experience deal with things which are possessed of attributes.Therefore, it is conclusively established that that Highest Person alone, who is capable of 'seeing' and of willing to the effect356 - ‘May I become manifold in the form of the world which is made up of wonderful intelligent and non-intelligent things', - that (Highest Person alone) is He who has to be enquired into.",
-  },
-  {
-    telugu: " ",
-  },
-  {
-    tamil: " ",
+    roman: {
+      preSutra: "",
+      sutra: "Sutra 12. Śrutvāchcha.",
+      text: "",
+    },
+    telugu: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    tamil: {
+      preSutra: "",
+      sutra: "",
+      text: "",
+    },
+    number: 12,
   },
 ]

@@ -7,6 +7,7 @@ import "./tree.css"
 
 interface Data {
   name: string
+  link?: string
   children?: Work[]
 }
 
@@ -83,10 +84,7 @@ export default function Tree({ treeData }: TreeProps) {
 
       nodeEnter
         .append("a")
-        .attr(
-          "href",
-          (d) => `/${d.data.name.replace(/\s+/g, "-").toLowerCase()}`
-        )
+        .attr("href", (d) => d.data.link || (d.data.link = "#"))
         .append("text")
         .attr("dy", ".35em")
         .attr("x", (d) => (d.children || d._children ? -13 : 13))

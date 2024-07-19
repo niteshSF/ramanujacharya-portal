@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import type { RootState } from "@/app/store"
 
-type Language = "roman" | "kannada" | "telugu" | "tamil"
-
 const languageSlice = createSlice({
   name: "language",
   initialState: "roman" as Language,

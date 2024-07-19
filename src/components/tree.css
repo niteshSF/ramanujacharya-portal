@@ -4,7 +4,8 @@
 }
 
 .node text {
-  font: 12px sans-serif;
+  font: 14px sans-serif;
+  font-weight: bold;
   color: #000000;
 }
 

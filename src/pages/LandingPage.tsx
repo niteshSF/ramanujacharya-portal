@@ -1,14 +1,23 @@
-import BaseLayout from "@/layouts/BaseLayout"
 import HdCenterImg from "@/assets/images/landing/landing_top.png"
 import Ramanuja from "@/assets/images/landing/landing_ramanuja.png"
 import Lamp from "@/assets/images/landing/lamp.png"
 import CtrText from "@/assets/images/landing/landing_center_text.png"
-import EnterButton from "@/components/EnterButton/EnterButton"
+import EnterButton from "@/components/EnterButton"
+import BgImg from "@/assets/images/background.png"
+import SFLogo from "@/assets/images/samskriti_foundation.png"
 
 export default function LandingPage() {
   return (
-    <BaseLayout>
+    <div
+      className="relative overflow-hidden min-h-[100vh]"
+      style={{
+        backgroundImage: `url(${BgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <img src={HdCenterImg} alt="Title" className="mx-auto pt-2" />
+      <img src={SFLogo} className="absolute right-8 top-4 z-10" />
       <img
         src={Lamp}
         alt="Lamp"
@@ -29,6 +38,6 @@ export default function LandingPage() {
       <div className="absolute top-[60%] right-[33%] z-[100]">
         <EnterButton />
       </div>
-    </BaseLayout>
+    </div>
   )
 }

@@ -15,6 +15,7 @@ export const works = {
         },
         {
           name: "Sri Bhashyam",
+          link: "/sri-bhashyam",
         },
         {
           name: "Vedanta dipah",

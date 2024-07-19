@@ -53,6 +53,8 @@ export default function Toolbar() {
   const isPreviousDisabled = sutra <= 5
   const isNextDisabled = sutra >= sutraLimit
 
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+
   const [isPlaying, setIsPlaying] = useState(false)
   const [audioUrl, setAudioUrl] = useState<string | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -136,9 +138,6 @@ export default function Toolbar() {
         <Button className="hover:bg-stone-500">
           <Clapperboard />
         </Button>
-        <Toggle>
-          <Clapperboard />
-        </Toggle>
       </div>
       <audio ref={audioRef} src={audioUrl} />
     </div>

@@ -1,5 +1,5 @@
 import BaseLayout from "@/layouts/BaseLayout"
-import design from "@/assets/design.png"
+import Design from "@/assets/images/design.png"
 import SutraInfo from "@/features/sri-bhasyam/components/SutraInfo"
 import TransliterationInfo from "@/features/sri-bhasyam/components/TransliterationInfo"
 import MeaningInfo from "@/features/sri-bhasyam/components/MeaningInfo"
@@ -14,7 +14,7 @@ export default function InfoPage() {
             श्रीभगवद्र्मानुजाचार्य विरचितं
           </h3>
           <h1 className="text-4xl text-red-500 font-bold">श्रीभाष्यम्</h1>
-          <img src={design} width="120px" height="40px" />
+          <img src={Design} width="120px" height="40px" />
         </div>
         <SutraInfo />
         <div className="mt-8">
