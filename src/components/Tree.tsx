@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
 import "./tree.css"
+import defaultData from "../../data/worksOfRamanujacharya"
 
 interface Data {
   name: string
