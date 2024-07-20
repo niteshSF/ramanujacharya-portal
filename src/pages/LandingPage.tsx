@@ -5,8 +5,18 @@ import CtrText from "@/assets/images/landing/landing_center_text.png"
 import EnterButton from "@/components/EnterButton"
 import BgImg from "@/assets/images/background.png"
 import SFLogo from "@/assets/images/samskriti_foundation.png"
+import LandingAudio from "@/assets/audio/landing_audio.m4a"
+import { useEffect, useRef } from "react"
 
 export default function LandingPage() {
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play()
+    }
+  }, [])
+
   return (
     <div
       className="relative overflow-hidden min-h-[100vh]"
@@ -16,6 +26,7 @@ export default function LandingPage() {
         backgroundPosition: "center",
       }}
     >
+      <audio ref={audioRef} src={LandingAudio} autoPlay />
       <img src={HdCenterImg} alt="Title" className="mx-auto pt-2" />
       <img src={SFLogo} className="absolute right-8 top-4 z-10" />
       <img
