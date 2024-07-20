@@ -1,16 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import HomePage from "./pages/home/HomePage"
-import InfoPage from "./pages/info/InfoPage"
-import LandingPage from "./pages/landing/LandingPage"
+import { Route, Routes } from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import SutraPage from "./pages/sri-bhashyam/SutraPage"
+import SriBhashyamPage from "./pages/sri-bhashyam/SriBhashyamPage"
+import LandingPage from "./pages/LandingPage"
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/info/:infoSlug" element={<InfoPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/sri-bhashyam" element={<SriBhashyamPage />} />
+      <Route path="/sri-bhashyam/ixatyadhikaranam" element={<SutraPage />} />
+    </Routes>
   )
 }

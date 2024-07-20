@@ -1,14 +1,14 @@
-import { Box } from "@chakra-ui/react"
-import bgImage from "../assets/images/background.png"
+import Header from "@/components/Header"
 
 interface BaseLayoutProps {
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <Box bgImage={bgImage} bgSize={"cover"} bgPos={"center"} minH="100vh">
+    <div>
+      <Header />
       {children}
-    </Box>
+    </div>
   )
 }

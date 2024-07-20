@@ -1,0 +1,22 @@
+.node circle {
+  stroke: #78716c;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 14px sans-serif;
+  font-weight: bold;
+  color: #000000;
+}
+
+.link {
+  fill: none;
+  stroke: #c9a89c;
+  stroke-width: 2px;
+}
+
+#tree {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
