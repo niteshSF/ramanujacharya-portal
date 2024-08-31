@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { selectMetadata } from "../redux/sriBhashyamMetaDataSlice"
 import { useGetSutraQuery } from "../api/sutrasApiSlice"
 import { parseHTML, romanToDevanagari } from "@/lib/utils"
+import AdhikarnaInfo from "./AdhikarnaInfo"
 
 export default function SutraInfo() {
   const metadata = useSelector((state: RootState) => selectMetadata(state))
@@ -17,9 +18,7 @@ export default function SutraInfo() {
 
   return (
     <div>
-      <h1 className="text-center font-bold text-3xl mb-4">
-      ईक्षत्यधिकरणम ॥१-१-५॥ (सू ५ – १२)
-    </h1>
+      <AdhikarnaInfo/>
       {sutra && (
         <div className="bg-secondary font-semibold p-4 [&>*]:p-4 rounded-md h-[300px] overflow-y-scroll overflow-x-auto shadow-md">
           <div>{parseHTML(sutra.preSutra)}</div>

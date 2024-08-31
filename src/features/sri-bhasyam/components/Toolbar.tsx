@@ -14,14 +14,10 @@ import {
   ChevronRight,
   ChevronFirst,
   ChevronLast,
-  Play,
-  Pause,
-  Clapperboard,
 } from "lucide-react"
-import { setSutra } from "../redux/sriBhashyamMetaDataSlice"
-import { useState, useEffect, useRef } from "react"
-import { Toggle } from "@/components/ui/toggle"
-import { toggleVideoPlaying, selectvideoPlaying } from "../redux/videoPlaying"
+import { selectMetadata, setSutra } from "../redux/sriBhashyamMetaDataSlice"
+import MediaDisplay from "./MediaDisplay"
+import { useGetAdhikarnaQuery, useGetAdhikarnasQuery } from "../api/adhikarnasApiSlice"
 
 const languages = [
   { value: "roman", label: "Roman/English" },
@@ -30,14 +26,27 @@ const languages = [
   { value: "tamil", label: "Tamil" },
 ]
 
-const sutraLimit = 12
-
 export default function Toolbar() {
   const dispatch = useDispatch()
 
-  const sutra = useSelector(
-    (state: RootState) => state.sriBhashyamMetadata.sutra
+  const metadata = useSelector(
+    (state: RootState) => selectMetadata((state))
   )
+
+  const {
+    data: adhikarnas
+  } = useGetAdhikarnasQuery({
+    adhyaya_no: metadata.adhyaya,
+    pada_no: metadata.pada,
+  })
+
+  const {
+    data: adhikarna
+  } = useGetAdhikarnaQuery({
+    adhyaya_no: metadata.adhyaya,
+    pada_no: metadata.pada,
+    adhikarna_no: metadata.adhikarna,
+  })
 
   const selectedLanguage = useSelector((state: RootState) =>
     selectLanguage(state)
@@ -48,58 +57,12 @@ export default function Toolbar() {
   }
 
   const updateURL = (increment: number) => {
-    dispatch(setSutra(sutra + increment))
+    dispatch(setSutra(metadata.sutra + increment))
   }
 
-  const isVideoPlaying = useSelector(selectvideoPlaying)
-  console.log(isVideoPlaying)
+  const isPreviousDisabled = metadata.sutra <= 5
+  const isNextDisabled = metadata.sutra >= (adhikarna ? adhikarna.sutra_range[1] : 0)
 
-  const handlePressChange = () => {
-    dispatch(toggleVideoPlaying())
-  }
-
-  const isPreviousDisabled = sutra <= 5
-  const isNextDisabled = sutra >= sutraLimit
-
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [audioUrl, setAudioUrl] = useState<string | null>(null)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
-  const [previousPlaybackState, setPreviousPlaybackState] =
-    useState<boolean>(false)
-
-  useEffect(() => {
-    if (audioRef.current) {
-      setPreviousPlaybackState(isPlaying)
-    }
-
-    import(`@/assets/audio/Sutra_${sutra}.m4a`)
-      .then((module) => {
-        setAudioUrl(module.default)
-        if (audioRef.current) {
-          if (previousPlaybackState) {
-            audioRef.current.play()
-            setIsPlaying(true)
-          }
-        }
-      })
-      .catch((error) => {
-        console.error("Error loading audio file:", error)
-      })
-  }, [sutra])
-
-  useEffect(() => {
-    if (audioRef.current) {
-      isPlaying ? audioRef.current.play() : audioRef.current.pause()
-    }
-  }, [isPlaying])
-
-  const handlePlayPause = () => {
-    setIsPlaying((prev) => !prev)
-  }
-
-  if (!audioUrl) {
-    return null
-  }
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between p-2 gap-4">
@@ -137,19 +100,7 @@ export default function Toolbar() {
           <ChevronLast />
         </Button>
       </div>
-      <div className="flex gap-2 [&>*]:text-primary [&>*]:font-bold [&>*]:bg-secondary">
-        <Button className="hover:bg-stone-500" onClick={handlePlayPause}>
-          {isPlaying ? <Pause /> : <Play />}
-        </Button>
-        <Toggle
-          className="hover:bg-stone-500 data-[state=on]:bg-stone-500 data-[state=off]:bg-secondary	px-4"
-          pressed={isVideoPlaying}
-          onPressedChange={handlePressChange}
-        >
-          <Clapperboard />
-        </Toggle>
-      </div>
-      <audio ref={audioRef} src={audioUrl} />
+      <MediaDisplay/>
     </div>
   )
 }

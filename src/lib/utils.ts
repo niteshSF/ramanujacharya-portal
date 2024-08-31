@@ -50,3 +50,105 @@ export function devanagariToRoman(devanagari: string): string {
 export function romanToDevanagari(roman: string): string {
   return roman.split('').map(char => romanToDevanagariMap[char] || char).join('');
 }
+
+const kannadaToRomanMap: { [key: string]: string } = {
+  '೦': '0',
+  '೧': '1',
+  '೨': '2',
+  '೩': '3',
+  '೪': '4',
+  '೫': '5',
+  '೬': '6',
+  '೭': '7',
+  '೮': '8',
+  '೯': '9'
+};
+
+const romanToKannadaMap: { [key: string]: string } = {
+  '0': '೦',
+  '1': '೧',
+  '2': '೨',
+  '3': '೩',
+  '4': '೪',
+  '5': '೫',
+  '6': '೬',
+  '7': '೭',
+  '8': '೮',
+  '9': '೯'
+};
+
+export function kannadaToRoman(kannada: string): string {
+  return kannada.split('').map(char => kannadaToRomanMap[char] || char).join('');
+}
+
+export function romanToKannada(roman: string): string {
+  return roman.split('').map(char => romanToKannadaMap[char] || char).join('');
+}
+
+const tamilToRomanMap: { [key: string]: string } = {
+  '௦': '0',
+  '௧': '1',
+  '௨': '2',
+  '௩': '3',
+  '௪': '4',
+  '௫': '5',
+  '௬': '6',
+  '௭': '7',
+  '௮': '8',
+  '௯': '9'
+}
+
+const romanToTamilMap: { [key: string]: string } = {
+  '0': '௦',
+  '1': '௧',
+  '2': '௨',
+  '3': '௩',
+  '4': '௪',
+  '5': '௫',
+  '6': '௬',
+  '7': '௭',
+  '8': '௮',
+  '9': '௯'
+}
+
+export function tamilToRoman(tamil: string): string {
+  return tamil.split('').map(char => tamilToRomanMap[char] || char).join('')
+}
+
+export function romanToTamil(roman: string): string {
+  return roman.split('').map(char => romanToTamilMap[char] || char).join('')
+}
+
+const teluguToRomanMap: { [key: string]: string } = {
+  '౦': '0',
+  '౧': '1',
+  '౨': '2',
+  '౩': '3',
+  '౪': '4',
+  '౫': '5',
+  '౬': '6',
+  '౭': '7',
+  '౮': '8',
+  '౯': '9'
+}
+
+const romanToTeluguMap: { [key: string]: string } = {
+  '0': '౦',
+  '1': '౧',
+  '2': '౨',
+  '3': '౩',
+  '4': '౪',
+  '5': '౫',
+  '6': '౬',
+  '7': '౭',
+  '8': '౮',
+  '9': '౯'
+}
+
+export function teluguToRoman(telugu: string): string {
+  return telugu.split('').map(char => teluguToRomanMap[char] || char).join('')
+}
+
+export function romanToTelugu(roman: string): string {
+  return roman.split('').map(char => romanToTeluguMap[char] || char).join('')
+}

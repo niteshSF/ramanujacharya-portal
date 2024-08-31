@@ -9,6 +9,16 @@ interface Adhikarna {
   telugu_name: string | null
 }
 
+interface AdhikarnaOne{
+  number: number
+  devanagari_name: string
+  english_name: string
+  kannada_name: string | null
+  tamil_name: string | null
+  telugu_name: string | null
+  sutra_range: [number, number]
+}
+
 export const adhikarnasApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getAdhikarnas: builder.query<
@@ -21,7 +31,7 @@ export const adhikarnasApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getAdhikarna: builder.query<
-      Adhikarna,
+      AdhikarnaOne,
       { adhyaya_no: number; pada_no: number; adhikarna_no: number }
     >({
       query: ({ adhyaya_no, pada_no, adhikarna_no }) => ({
