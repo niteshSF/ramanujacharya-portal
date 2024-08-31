@@ -10,7 +10,7 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/sri-bhashyam" element={<SriBhashyamPage />} />
-      <Route path="/sri-bhashyam/ixatyadhikaranam" element={<SutraPage />} />
+      <Route path="/sri-bhashyam/sutras" element={<SutraPage />} />
     </Routes>
   )
 }

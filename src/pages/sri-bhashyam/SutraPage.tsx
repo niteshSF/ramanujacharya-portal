@@ -6,6 +6,7 @@ import MeaningInfo from "@/features/sri-bhasyam/components/MeaningInfo"
 import Toolbar from "@/features/sri-bhasyam/components/Toolbar"
 import { useSelector } from "react-redux"
 import { selectvideoPlaying } from "@/features/sri-bhasyam/redux/videoPlaying"
+import PathBreadcrumb from "@/features/sri-bhasyam/components/PathBreadcrumb"
 
 export default function InfoPage() {
   const isVideoPlaying = useSelector(selectvideoPlaying)
@@ -19,6 +20,7 @@ export default function InfoPage() {
           </h3>
           <h1 className="text-4xl text-red-500 font-bold">श्रीभाष्यम्</h1>
           <img src={Design} width="120px" height="40px" />
+          <PathBreadcrumb/>
         </div>
         <SutraInfo />
         <div className="mt-8">
