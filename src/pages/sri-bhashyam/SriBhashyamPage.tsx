@@ -1,4 +1,4 @@
-import Tree from "@/components/Tree"
+import Tree from "@/components/SriBhashyamTree"
 import BaseLayout from "@/layouts/BaseLayout"
 import { sriBhashyam } from "@/data/sriBhashyam"
 import RamanujaBg from "@/components/RamanujaBg"
