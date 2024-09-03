@@ -6,9 +6,23 @@ import MeaningInfo from "@/features/sri-bhasyam/components/MeaningInfo"
 import Toolbar from "@/features/sri-bhasyam/components/Toolbar"
 import { useSelector } from "react-redux"
 import { selectvideoPlaying } from "@/features/sri-bhasyam/redux/videoPlaying"
+import PathBreadcrumb from "@/features/sri-bhasyam/components/PathBreadcrumb"
+import { useGetVideoQuery } from "@/features/sri-bhasyam/api/mediaApiSlice"
+import { selectMetadata } from "@/features/sri-bhasyam/redux/sriBhashyamMetaDataSlice"
+import { RootState } from "@/app/store"
 
 export default function InfoPage() {
   const isVideoPlaying = useSelector(selectvideoPlaying)
+  const metadata = useSelector((state: RootState) => selectMetadata(state))
+  
+  const {
+    data: video
+  } = useGetVideoQuery({
+    adhyaya_no: metadata.adhyaya,
+    pada_no: metadata.pada,
+    adhikarna_no: metadata.adhikarna,
+    sutra_no: metadata.sutra
+  })
 
   return (
     <BaseLayout>
@@ -19,6 +33,7 @@ export default function InfoPage() {
           </h3>
           <h1 className="text-4xl text-red-500 font-bold">श्रीभाष्यम्</h1>
           <img src={Design} width="120px" height="40px" />
+          <PathBreadcrumb/>
         </div>
         <SutraInfo />
         <div className="mt-8">
@@ -40,7 +55,7 @@ export default function InfoPage() {
         ) : (
           <iframe
             className="w-full lg:w-[90%] h-[600px] p-4 mx-auto my-8"
-            src="https://www.youtube.com/embed/LVhHTAKnFsc"
+            src={`https://www.youtube.com/embed/${video?.video_link}`}
           />
         )}
       </div>

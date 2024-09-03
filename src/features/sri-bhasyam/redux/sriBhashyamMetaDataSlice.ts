@@ -43,5 +43,6 @@ export const selectPada = (state: RootState) => state.sriBhashyamMetadata.pada
 export const selectAdhikarna = (state: RootState) =>
   state.sriBhashyamMetadata.adhikarna
 export const selectSutra = (state: RootState) => state.sriBhashyamMetadata.sutra
+export const selectMetadata = (state: RootState) => state.sriBhashyamMetadata
 
 export default sriBhashyamMetadataSlice.reducer
