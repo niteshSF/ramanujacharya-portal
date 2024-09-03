@@ -17,7 +17,7 @@ import {
 } from "lucide-react"
 import { selectMetadata, setSutra } from "../redux/sriBhashyamMetaDataSlice"
 import MediaDisplay from "./MediaDisplay"
-import { useGetAdhikarnaQuery, useGetAdhikarnasQuery } from "../api/adhikarnasApiSlice"
+import { useGetAdhikarnaQuery } from "../api/adhikarnasApiSlice"
 
 const languages = [
   { value: "roman", label: "Roman/English" },
@@ -32,13 +32,6 @@ export default function Toolbar() {
   const metadata = useSelector(
     (state: RootState) => selectMetadata((state))
   )
-
-  const {
-    data: adhikarnas
-  } = useGetAdhikarnasQuery({
-    adhyaya_no: metadata.adhyaya,
-    pada_no: metadata.pada,
-  })
 
   const {
     data: adhikarna
