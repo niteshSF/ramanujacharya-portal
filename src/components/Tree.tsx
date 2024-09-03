@@ -85,7 +85,7 @@ export default function Tree({ treeData }: TreeProps) {
 
       nodeEnter
         .append("a")
-        .attr("href", (d) => d.data.link || (d.data.link = "#"))
+        .attr("href", (d) => `/ramanujacharya${d.data.link}` || (d.data.link = "#"))
         .append("text")
         .attr("dy", ".35em")
         .attr("x", (d) => (d.children || d._children ? -13 : 13))

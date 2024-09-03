@@ -92,7 +92,7 @@ export default function SriBhashyamTree({ treeData }: TreeProps) {
         .append("a")
         .attr("href", (d) => {
           if(d.data.glug){
-            return "/sri-bhashyam/sutras"
+            return "/ramanujacharya/sri-bhashyam/sutras"
           }else{
             return "#"
           }
