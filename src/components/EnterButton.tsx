@@ -7,7 +7,7 @@ export default function EnterButton() {
   const navigate = useNavigate()
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col left-11">
       <img src={EnterTop} />
       <img
         src={EnterBtn}

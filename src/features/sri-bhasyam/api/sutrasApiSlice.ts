@@ -24,7 +24,7 @@ export const sutrasApiSlice = apiSlice.injectEndpoints({
         adhyaya_no: number;
         pada_no: number;
         adhikarna_no: number;
-        sutra_no: number;
+          sutra_no: number;
       }
     >({
       query: ({ adhyaya_no, pada_no, adhikarna_no, sutra_no }) => ({

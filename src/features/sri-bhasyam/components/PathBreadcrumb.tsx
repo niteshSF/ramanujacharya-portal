@@ -64,11 +64,13 @@ export default function PathBreadcrumb() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
+
         <BreadcrumbItem>
           {!adhyayaError ? (
             isAdhyayaLoading ? (
               <Skeleton className="h-6 w-16" />
-            ) : (
+              
+            ) : ( 
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center gap-2">
                   Adhyaya {metadata.adhyaya}
@@ -93,9 +95,11 @@ export default function PathBreadcrumb() {
             <p>{JSON.stringify(adhyayaError)}</p>
           )}
         </BreadcrumbItem>
+
         <BreadcrumbSeparator>
           <Slash strokeWidth={4} />
         </BreadcrumbSeparator>
+
         <BreadcrumbItem>
           {!padaError ? (
             isPadaLoading ? (
@@ -125,9 +129,11 @@ export default function PathBreadcrumb() {
             <p>{JSON.stringify(padaError)}</p>
           )}
         </BreadcrumbItem>
+
         <BreadcrumbSeparator>
           <Slash strokeWidth={4} />
         </BreadcrumbSeparator>
+
         <BreadcrumbItem>
           {!adhikarnaError ? (
             isAdhikarnaLoading ? (
@@ -157,9 +163,11 @@ export default function PathBreadcrumb() {
             <p>{JSON.stringify(adhikarnaError)}</p>
           )}
         </BreadcrumbItem>
+
         <BreadcrumbSeparator>
           <Slash strokeWidth={4} />
         </BreadcrumbSeparator>
+
         <BreadcrumbItem>
           {!sutraError ? (
             isSutraLoading ? (

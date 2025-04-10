@@ -23,17 +23,17 @@ export default function TransliterationInfo() {
   return (
     <div className="bg-secondary font-semibold px-4 [&>*]:p-4 rounded-md h-[300px] overflow-y-scroll overflow-x-auto shadow-md">
       {error ? (
-        <p>Transliteration not found</p>
+        <p>Transliteration not found !!!</p>
       ) : transliteration ? (
         <>
           <div>{parseHTML(transliteration.preSutra)}</div>
           <h1 className="text-center font-bold text-2xl text-red-500">{`${transliteration.sutraText} ॥${metadata.adhyaya} - ${metadata.pada} - ${metadata.sutra}॥`}</h1>
           <div>{parseHTML(transliteration.text)}</div>
         </>
-      ) : (
+      ) : ( 
         <p>No Transliteration Found</p>
-      )}
+      )
+      }
     </div>
   )
 }
-

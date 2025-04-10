@@ -1,4 +1,5 @@
 import { apiSlice } from "@/app/api/apiSlice"
+import { transliterationSelector } from "@/data/transliteration"
 
 interface Transliteration {
   language: string
@@ -20,7 +21,7 @@ export const transliterationsApiSlice = apiSlice.injectEndpoints({
       }
     >({
       query: ({ adhyaya_no, pada_no, adhikarna_no, sutra_no, lang = "roman" }) => ({
-        url: `/ramanujacharya/sri-bhashyam/sutras/${adhyaya_no}/${pada_no}/${adhikarna_no}/${sutra_no}/transliteration/${lang}`,
+        url: `/ramanujacharya/sri-bhashyam/sutras/${adhyaya_no}/${pada_no}/${adhikarna_no}/${sutra_no}/${transliterationSelector}/${lang}`,
         method: "GET",
       }),
     }),

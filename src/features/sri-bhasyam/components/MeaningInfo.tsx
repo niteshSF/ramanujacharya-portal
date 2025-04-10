@@ -17,19 +17,19 @@ export default function MeaningInfo() {
     pada_no: metadata.pada,
     adhikarna_no: metadata.adhikarna,
     sutra_no: metadata.sutra,
-    lang: language 
+    lang: language
   })
 
   return (
     <div className="bg-secondary font-semibold p-4 [&>*]:p-4 rounded-md h-[300px] overflow-y-scroll overflow-x-auto shadow-md">
       {error ? (
-        <p>Meaning not found</p>
+        <p>Meaning not found !!!</p>
       ) : (
         meaning ? (
           <div>{parseHTML(meaning.text)}</div>
         ) : (
-          <p>Meaning not found</p>
-        )
+        <p>Meaning not found....</p>
+      )
       )}
     </div>
   )

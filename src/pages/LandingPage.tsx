@@ -23,7 +23,7 @@ export default function LandingPage() {
       style={{
         backgroundImage: `url(${BgImg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "absolute",
       }}
     >
       <audio ref={audioRef} src={LandingAudio} autoPlay />
