@@ -6,14 +6,14 @@ The Ramanujacharya Portal is a comprehensive website developed by the Samskriti 
 
 ### Links to Related Repositories:
 
-- Works of Ramanujacharya texts: [https://github.com/Samskriti-Foundation/texts-works-of-ramanujacharya](https://github.com/Samskriti-Foundation/texts-works-of-ramanujacharya)
+- Works of Ramanujacharya texts: [https://github.com/niteshSF/ramanujacharya-portal](https://github.com/niteshSF/ramanujacharya-portal)
 
 ## Installation
 
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Samskriti-Foundation/ramanujacharya-portal.git
+   git clone https://github.com/niteshSF/ramanujacharya-portal.git
    ```
 
 2. **Navigate to the project directory:**
