@@ -7,7 +7,7 @@ export default function ExploreButtonSecond() {
       <img
         src={PressBtn}
         onClick={() => {
-          window.location.href = "http://localhost:5173/"; // Redirect to a different port
+          window.location.href = "http://localhost:5175/"; // Redirect to a different port
         }}
         className="cursor-pointer"
       />

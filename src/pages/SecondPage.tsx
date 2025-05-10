@@ -1,68 +1,66 @@
-import { useEffect, useRef } from "react";
 import BgImg from "@/assets/images/second_page/background.jpg";
-import LandingAudio from "@/assets/audio/landing_audio.m4a";
 import centerText from "@/assets/images/second_page/sri_ramanujacarya.png";
 import leftText from "@/assets/images/second_page/sri_vedanta_desika.png";
 import rightText from "@/assets/images/second_page/sri_varavaramuni.png";
-import ExploreButton from "@/components/ExploreButton";
-import ExploreButtonSecond from "@/components/ExploreButtonSecond";
+import PressBtn from "@/assets/images/second_page/explore_button.png";
 
 export default function SecondView() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.play();
-    }
-  }, []);
-
   return (
     <div
-      className="relative overflow-auto min-h-screen w-full bg-cover"
+      className="relative min-h-screen w-full bg-cover bg-no-repeat bg-top"
       style={{
         backgroundImage: `url(${BgImg})`,
-        backgroundPosition: "top",
-        backgroundRepeat: "no-repeat",
       }}
     >
-      <audio ref={audioRef} src={LandingAudio} autoPlay />
-
       {/* Center Image */}
       <img
         src={centerText}
-        className="absolute top-[3%] right-[32%] h-[55vh] max-w-[80vw] z-10"
+        className="absolute top-[0vh] left-1/2 transform -translate-x-1/2 h-[30vh] md:h-[35vh] lg:h-[40vh] xl:h-[52vh] 2xl:h-[50vh] max-w-[80vw] object-contain z-10"
         alt="Center Text"
       />
 
-      {/* Explore Button 1 */}
-      <div className="absolute  top-[58%] right-[42%] transform -translate-x-1/2 z-10">
-      {/* <div className="absolute top-[58%] left-[50%] transform -translate-x-1/2 z-10"> */}
-
-        <ExploreButton />
+      {/* Explore Button - Center */}
+      <div className="absolute top-[53%] left-[45.5%] z-10">
+        <a
+          href="https://test2.samskritifoundation.org/ramanujacharya"
+          target="_blank"
+        >
+          <img src={PressBtn} alt="Enter Button 2" />
+        </a>
       </div>
 
       {/* Left Image */}
       <img
         src={leftText}
-        className="absolute bottom-[12%] left-[11%] h-[55vh] max-w-[70vw] z-10"
+        className="absolute bottom-[14%] left-[9%] h-[25vh] md:h-[30vh] lg:h-[35vh] xl:h-[52vh] 2xl:h-[45vh] max-w-[40vw] object-contain z-10"
         alt="Left Text"
       />
-      
-      {/* Explore Button 2 */}
-      <div className="absolute  bottom-[6%] left-[15%]  z-10">
-        <ExploreButtonSecond />
+
+      {/* Explore Button - Left */}
+      <div className="absolute bottom-[8%] left-[18%] z-10">
+        <a
+          href="https://test2.samskritifoundation.org/vedantadesika/"
+          target="_blank"
+        >
+          <img src={PressBtn} alt="Enter Button 2" />
+        </a>
       </div>
 
       {/* Right Image */}
       <img
         src={rightText}
-        className="absolute bottom-[12%] right-[10%] h-[55vh] max-w-[70vw] z-10"
+        className="absolute bottom-[14%] right-[9%] h-[25vh] md:h-[30vh] lg:h-[35vh] xl:h-[52vh] 2xl:h-[45vh] max-w-[40vw] object-contain z-10"
         alt="Right Text"
       />
-      
-      {/* Explore Button 3 */}
-      <div className="fixed bottom-[6%] right-[19%] z-10">
-        <ExploreButton />
+
+      {/* Explore Button - Right */}
+      <div className="absolute bottom-[8%] right-[17%] z-10">
+        <a
+          href="https://test2.samskritifoundation.org/ramanujacharya"
+          target="_blank"
+        >
+          <img src={PressBtn} alt="Enter Button 2" />
+        </a>
       </div>
     </div>
   );
