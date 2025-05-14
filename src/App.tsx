@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SutraPage from "./pages/sri-bhashyam/SutraPage";
 import SriBhashyamPage from "./pages/sri-bhashyam/SriBhashyamPage";
@@ -9,16 +9,16 @@ import VaravaramuniPage from "./pages/VaravaramuniPage";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<FirstPage />} />
-        <Route path="/second" element={<SecondPage />} />
-        <Route path="/landing" element={<LandingPage />} />
-        <Route path="/varavaramuni" element={<VaravaramuniPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/sri-bhashyam" element={<SriBhashyamPage />} />
-        <Route path="/sri-bhashyam/sutras" element={<SutraPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<FirstPage />} />
+      <Route path="/second" element={<SecondPage />} />
+      <Route path="/landing" element={<LandingPage />} />
+
+      <Route path="/varavaramuni" element={<VaravaramuniPage />} />
+
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/sri-bhashyam" element={<SriBhashyamPage />} />
+      <Route path="/sri-bhashyam/sutras" element={<SutraPage />} />
+    </Routes>
   );
 }
