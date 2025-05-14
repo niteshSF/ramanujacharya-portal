@@ -3,6 +3,7 @@ import centerText from "@/assets/images/second_page/sri_ramanujacarya.png";
 import leftText from "@/assets/images/second_page/sri_vedanta_desika.png";
 import rightText from "@/assets/images/second_page/sri_varavaramuni.png";
 import PressBtn from "@/assets/images/second_page/explore_button.png";
+import { Link } from "react-router-dom";
 
 export default function SecondView() {
   return (
@@ -56,11 +57,15 @@ export default function SecondView() {
       {/* Explore Button - Right */}
       <div className="absolute bottom-[8%] right-[17%] z-10">
         <a
-          href="/ramanujacharya-portal/varavaramuni"
+          href="https://niteshsf.github.io/ramanujacharya-portal/varavaramuni"
           target="_blank"
         >
           <img src={PressBtn} alt="Enter Button 2" />
         </a>
+
+        {/* <Link to="/varavaramuni">
+          <img src={PressBtn} alt="Enter Button 2" />
+        </Link> */}
       </div>
     </div>
   );
