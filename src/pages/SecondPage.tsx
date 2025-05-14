@@ -56,7 +56,7 @@ export default function SecondView() {
       {/* Explore Button - Right */}
       <div className="absolute bottom-[8%] right-[17%] z-10">
         <a
-          href="https://test2.samskritifoundation.org/ramanujacharya"
+          href="/ramanujacharya-portal/varavaramuni"
           target="_blank"
         >
           <img src={PressBtn} alt="Enter Button 2" />
