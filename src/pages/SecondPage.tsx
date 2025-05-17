@@ -56,16 +56,16 @@ export default function SecondView() {
 
       {/* Explore Button - Right */}
       <div className="absolute bottom-[8%] right-[17%] z-10">
-        <a
+    {/*<a
           href="https://niteshsf.github.io/ramanujacharya-portal/varavaramuni"
           target="_blank"
         >
           <img src={PressBtn} alt="Enter Button 2" />
-        </a>
+        </a> */}
 
-        {/* <Link to="/varavaramuni">
+        <Link to="/varavaramuni">
           <img src={PressBtn} alt="Enter Button 2" />
-        </Link> */}
+        </Link>
       </div>
     </div>
   );
